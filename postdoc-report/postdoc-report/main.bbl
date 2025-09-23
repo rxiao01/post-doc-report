@@ -1,0 +1,220 @@
+\begin{thebibliography}{10}
+
+\bibitem{2021_Muzet}
+Val{\'e}rie Muzet, S{\'e}bastien Liandrat, Vincent Bour, J{\'e}r{\^o}me Dehon,
+  and Jean-Pierre Christory.
+\newblock Is it possible to achieve quality lighting without considering the
+  photometry of the pavements?
+\newblock In {\em Conference CIE 2021, NC Malaysia}, pages 11--25, 2021.
+
+\bibitem{2019_Muzet}
+Val{\'e}rie Muzet, Florian Greffier, Aur{\'e}lia Nicola{\"\i}, Alexandre Taron,
+  and Paul Verny.
+\newblock Evaluation of the performance of an optimized road surface/lighting
+  combination.
+\newblock {\em Lighting Research \& Technology}, 51(4):576--591, 2019.
+
+\bibitem{2018_Rossi}
+Giuseppe Rossi, Paola Iacomussi, and Michele Zinzi.
+\newblock Lighting implications of urban mitigation strategies through cool
+  pavements: energy savings and visual comfort.
+\newblock {\em Climate}, 6(2):26, 2018.
+
+\bibitem{2020_Burghardt}
+Tomasz~E Burghardt, Harald Mosb{\"o}ck, Anton Pashkevich, and Mario Fioli{\'c}.
+\newblock Horizontal road markings for human and machine vision.
+\newblock {\em Transportation research procedia}, 48:3622--3633, 2020.
+
+\bibitem{2008_Jarosz}
+Wojciech Jarosz.
+\newblock {\em Efficient Monte Carlo methods for light transport in scattering
+  media}.
+\newblock University of California, San Diego, 2008.
+
+\bibitem{2010_Roser}
+Martin Roser and Philip Lenz.
+\newblock Camera-based bidirectional reflectance measurement for road surface
+  reflectivity classification.
+\newblock In {\em 2010 IEEE Intelligent Vehicles Symposium}, pages 340--347.
+  IEEE, 2010.
+
+\bibitem{2011_KUSHARI}
+Berlian KUSHARI and Kunnawee KANITPONG.
+\newblock Surface albedo of bangkok roads.
+\newblock In {\em Proceedings of the Eastern Asia Society for Transportation
+  Studies Vol. 8 (The 9th International Conference of Eastern Asia Society for
+  Transportation Studies, 2011)}, pages 181--181. Eastern Asia Society for
+  Transportation Studies, 2011.
+
+\bibitem{2022_Hebert}
+Mathieu H{\'e}bert.
+\newblock {\em Optical models for material appearance}.
+\newblock EDP Sciences Les Ulis, France, 2022.
+
+\bibitem{1965_Nicodemus}
+Fred~E Nicodemus.
+\newblock Directional reflectance and emissivity of an opaque surface.
+\newblock {\em Applied optics}, 4(7):767--775, 1965.
+
+\bibitem{2012_Montes}
+Rosana Montes and Carlos Ure{\~n}a.
+\newblock An overview of brdf models.
+\newblock {\em University of Grenada, Technical Report LSI-2012-001}, 2012.
+
+\bibitem{2005_Lazanyi}
+Istv{\'a}n Laz{\'a}nyi and L{\'a}szl{\'o} Szirmay-Kalos.
+\newblock Fresnel term approximations for metals.
+\newblock {\em Winter School of Computer Graphics (WSCG), Short papers}, 2(6),
+  2005.
+
+\bibitem{1994_Schlick}
+Christophe Schlick.
+\newblock An inexpensive brdf model for physically-based rendering.
+\newblock In {\em Computer graphics forum}, volume~13, pages 233--246. Wiley
+  Online Library, 1994.
+
+\bibitem{2021_Majercik}
+Zander Majercik.
+\newblock The schlick fresnel approximation.
+\newblock In {\em Ray Tracing Gems II: Next Generation Real-Time Rendering with
+  DXR, Vulkan, and OptiX}, pages 109--114. Springer, 2021.
+
+\bibitem{2015_Filip}
+Ji{\v{r}}{\'\i} Filip.
+\newblock Analyzing and predicting anisotropic effects of brdfs.
+\newblock In {\em Proceedings of the ACM SIGGRAPH Symposium on Applied
+  Perception}, pages 25--32, 2015.
+
+\bibitem{2015_Qu}
+Ying Qu, Shunlin Liang, Qiang Liu, Tao He, Suhong Liu, and Xiaowen Li.
+\newblock Mapping surface broadband albedo from satellite observations: A
+  review of literatures on algorithms and products.
+\newblock {\em Remote Sensing}, 7(1):990--1020, 2015.
+
+\bibitem{2019_Chen}
+Jun Chen, Zheng Zhou, Jiantao Wu, Shuguang Hou, and Mengcheng Liu.
+\newblock Field and laboratory measurement of albedo and heat transfer for
+  pavement materials.
+\newblock {\em Construction and Building Materials}, 202:46--57, 2019.
+
+\bibitem{2019_Iacomussi}
+Paola Iacomussi, Giuseppe Rossi, et~al.
+\newblock Influence of material characterization in the design of tunnel
+  lighting installations.
+\newblock In {\em CIE Washington 2019}, pages 546--552. 2019.
+
+\bibitem{2014_Heitz}
+Eric Heitz.
+\newblock Understanding the masking-shadowing function in microfacet-based
+  brdfs.
+\newblock {\em Journal of Computer Graphics Techniques}, 3(2):32--91, 2014.
+
+\bibitem{1995_Oren}
+Michael Oren and Shree~K Nayar.
+\newblock Generalization of the lambertian model and implications for machine
+  vision.
+\newblock {\em International Journal of Computer Vision}, 14:227--251, 1995.
+
+\bibitem{2000_Meister}
+Gerhard Meister.
+\newblock {\em Bidirectional reflectance of urban surfaces}.
+\newblock PhD thesis, Staats-und Universit{\"a}tsbibliothek Hamburg Carl von
+  Ossietzky, 2000.
+
+\bibitem{2023_Lucas}
+Simon Lucas, Micka{\"e}l Ribardi{\`e}re, Romain Pacanowski, and Pascal Barla.
+\newblock A micrograin bsdf model for the rendering of porous layers.
+\newblock In {\em SIGGRAPH Asia 2023 Conference Papers}, pages 1--10, 2023.
+
+\bibitem{2024_Lucas}
+Simon Lucas, Micka{\"e}l Ribardi{\`e}re, Romain Pacanowski, and Pascal Barla.
+\newblock A fully-correlated anisotropic micrograin bsdf model.
+\newblock {\em ACM Transactions on Graphics}, 43(4):111, 2024.
+
+\bibitem{2007_Walter}
+Bruce Walter, Stephen~R Marschner, Hongsong Li, and Kenneth~E Torrance.
+\newblock Microfacet models for refraction through rough surfaces.
+\newblock {\em Rendering techniques}, 2007:18th, 2007.
+
+\bibitem{1967_Torrance}
+Kenneth~E Torrance and Ephraim~M Sparrow.
+\newblock Theory for off-specular reflection from roughened surfaces.
+\newblock {\em Journal of the Optical society of America}, 57(9):1105--1114,
+  1967.
+
+\bibitem{1982_Cook}
+Robert~L Cook and Kenneth~E. Torrance.
+\newblock A reflectance model for computer graphics.
+\newblock {\em ACM Transactions on Graphics (ToG)}, 1(1):7--24, 1982.
+
+\bibitem{2000_Ashikhmin}
+Michael Ashikhmin and Peter Shirley.
+\newblock An anisotropic phong brdf model.
+\newblock {\em Journal of graphics tools}, 5(2):25--32, 2000.
+
+\bibitem{2009_Simonot}
+Lionel Simonot.
+\newblock Photometric model of diffuse surfaces described as a distribution of
+  interfaced lambertian facets.
+\newblock {\em Applied optics}, 48(30):5793--5801, 2009.
+
+\bibitem{2001_Kelemen}
+Csaba Kelemen and Laszlo Szirmay-Kalos.
+\newblock A microfacet based coupled specular-matte brdf model with importance
+  sampling.
+\newblock In {\em Eurographics (short presentations)}, 2001.
+
+\bibitem{2012_Burley}
+Brent Burley and Walt Disney~Animation Studios.
+\newblock Physically-based shading at disney.
+\newblock In {\em Acm siggraph}, volume 2012, pages 1--7. vol. 2012, 2012.
+
+\bibitem{1997_Lafortune}
+Eric~PF Lafortune, Sing-Choong Foo, Kenneth~E Torrance, and Donald~P Greenberg.
+\newblock Non-linear approximation of reflectance functions.
+\newblock In {\em Proceedings of the 24th annual conference on Computer
+  graphics and interactive techniques}, pages 117--126, 1997.
+
+\bibitem{2015_Gimonet}
+Nicolas Gimonet, Aur{\'e}lien Cord, and Guillaume Saint~Pierre.
+\newblock How to predict real road state from vehicle embedded camera?
+\newblock In {\em 2015 IEEE Intelligent Vehicles Symposium (IV)}, pages
+  593--598. IEEE, 2015.
+
+\bibitem{2023_Spieringhs}
+Rik~Marco Spieringhs, Jan Audenaert, Kevin Smet, Ingrid Heynderickx, and Peter
+  Hanselaer.
+\newblock Road marking brdf model applicable for a wide range of incident
+  illumination conditions.
+\newblock {\em JOSA A}, 40(3):590--601, 2023.
+
+\bibitem{1984_Hapke}
+Bruce Hapke.
+\newblock Bidirectional reflectance spectroscopy.
+\newblock {\em Icarus}, 59(1):41--59, 1984.
+
+\bibitem{2022_Wise}
+John~E Wise and John~C Mars.
+\newblock Field reflectance measurements at night of beach and desert sands
+  within a particulate brdf model.
+\newblock {\em Remote Sensing}, 14(19):5020, 2022.
+
+\bibitem{2023_Zhuang}
+Yan Zhuang, Hao Zhang, Pei Ma, Te~Jiang, Yazhou Yang, Ralph~E Milliken, and
+  Weibiao Hsu.
+\newblock Visible and near-infrared reflectance spectra of igneous rocks and
+  their powders.
+\newblock {\em Icarus}, 391:115346, 2023.
+
+\bibitem{1988_Blumthaler}
+M~Blumthaler and W~Ambach.
+\newblock Solar uvb-albedo of various surfaces.
+\newblock {\em Photochemistry and photobiology}, 48(1):85--88, 1988.
+
+\bibitem{2022_Bai}
+Ruiqiang Bai, Mingyi Zhang, Jiwei Wang, Guanji Li, and Zhilang You.
+\newblock Study on the solar albedo characteristics of pavement and embankment
+  slope surfaces in permafrost regions.
+\newblock {\em Solar Energy}, 237:352--364, 2022.
+
+\end{thebibliography}

@@ -1,0 +1,372 @@
+\chapter{Optical properties of road surface}\label{ch:optical-properties-of-road-surface}
+\label{ch: optical properties}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Basic concepts}
+
+To provide a clear understanding of the optical properties of road surface, the fundamental terminologies are introduced in this section.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Radiometric quantities}
+
+Radiometric quantities provide a way to measure and describe the behavior of radiant energy in terms of light interaction with road surface.
+They include flux, radiant intensity, irradiance and radiance.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Flux $F$}, is the most fundamental quantity in radiometry~\cite{2008_Jarosz}.
+It is also called radiant power, which measures the amount of light that hits a surface over a finite area from all directions per unit time.
+For a given amount of radiated energy $Q$ at a time duration $t$, the flux $F$ is expressed as:
+\begin{equation}
+    F(t) = \frac{\mathrm{d}Q}{\mathrm{d}t}
+\end{equation}
+As $Q$ is expressed in Joules ($J$), the unit of $F$ is watts ($W = J\cdot s^{-1}$)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Radiant intensity $I$}, is a correlated measure of flux.
+It represents the intensity of flux per unit solid angle which is propagate towards some specific direction $(\theta, \varphi)$ toward the the infinitesimal solid angle $\mathrm{d}\overrightarrow{\omega}$~\cite{2022_Hebert}.
+Thus, it can be expressed in terms of flux:
+\begin{equation}
+    I(t, \theta, \varphi) = \frac{\mathrm{d}F(t)}{\mathrm{d}\overrightarrow{\omega}}%
+    =  \frac{\mathrm{d}F(t)}{\sin \theta \mathrm{d}\theta \mathrm{d} \varphi}
+\end{equation}
+Notice that the unit of solid angle is the steradian $[sr]$, so the unit of radiant intensity is $[W \cdot {sr}^{-1}]$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Irradiance $E$}, is another correlated measure of flux in terms of surface area.
+Different from radiant intensity, it captures the integration over the entire hemisphere $\Omega$ of the incident light arriving at a unit surface $\mathrm{d}s(p)$ centered on the point $p$.
+Essentially, it measure the amount of radiated energy strike a unit area per unit time:
+\begin{equation}
+    E(p, t) = \frac{\mathrm{d}F(t)}{\mathrm{d}s(p)}
+\end{equation}
+Its unit is $[W \cdot m^{-2}]$
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Radiance $L$}, measures the amount of incident light arriving at a unit surface $\mathrm{d}s(p)$ centered on $p$ from a unit solid angle $\mathrm{d}\overrightarrow{\omega}$ per unit time $t$.
+It can be considered as a correlated measure of radiant intensity per unit area or irradiance per unit solid angle:
+\begin{equation}
+    \label{eq_irradiance_radiance_intensity}
+    L(p, t, \theta, \varphi) = \frac{\mathrm{d}^2 F(t)}{\left| \overrightarrow{\omega} \cdot \overrightarrow{n} \right| \mathrm{d} \overrightarrow{\omega} \mathrm{d}s(p)}%
+    = \frac{\mathrm{d}I(t, \theta, \varphi)}{\cos \theta \mathrm{d}s(p)}%
+    = \frac{\mathrm{d} E(p, t)}{\sin \theta  \mathrm{d}\theta \mathrm{d} \varphi}%
+\end{equation}
+The product term $\cos \theta \mathrm{d}s(p)$ represents the projection of the unit surface $\mathrm{d}s(p)$ onto the direction $\overrightarrow{\omega}$.
+According to its definition, the unit of $L(p, t, \theta, \varphi)$ is $[W \cdot m^{-2} \cdot {sr}^{-1}]$.
+
+\subsection{Spectral radiometry}
+
+In the previous section, the definitions of radiometric quantities are given without considering the wavelength.
+In order to describe the spectral distribution of a radiation, the spectral radiometric quantities are introduced, including spectral flux, spectral intensity, spectral irradiance and spectral radiance.
+
+\textbf{Spectral flux $F_\lambda$}, is defined as the flux per unit wavelength and expressed in $[W \cdot {nm}^{-1}]$:
+\begin{equation}
+    F_\lambda(t) = \frac{\mathrm{d}F(t)}{\mathrm{d}\lambda}
+\end{equation}
+
+\textbf{Spectral intensity $I_\lambda$}, is the radiant intensity per unit wavelength and expressed in $[W \cdot {sr}^{-1} \cdot {nm}^{-1}]$:
+\begin{equation}
+    I_\lambda(t, \theta, \varphi)  =  \frac{\mathrm{d}I(t, \theta, \varphi)}{\mathrm{d}\lambda}
+\end{equation}
+
+\textbf{Spectral irradiance $E_\lambda$}, is irradiance per unit wavelength and expressed in $[W \cdot m^{-2} \cdot {nm}^{-1}]$:
+\begin{equation}
+    E_\lambda(p, t) = \frac{\mathrm{E(p, t)}}{\mathrm{d}\lambda}
+\end{equation}
+
+\textbf{Spectral radiance $L_\lambda$}, is defined as the radiance per unit wavelength and expressed in $[W \cdot m^{-2} \cdot {sr}^{-1} \cdot {nm}^{-1}]$:
+\begin{equation}
+    L_\lambda(p, t, \theta, \varphi) = \frac{\mathrm{d}L(p, t, \theta, \varphi)}{\mathrm{d}\lambda}
+\end{equation}
+
+The measurement of spectral quantities are conducted with instruments such as spectrophotometers which analyze the radiation in adjacent and narrow spectral bands~\cite{2022_Hebert}.
+When analyzing radiation over a broader wavelength range $[\lambda_1, \lambda_2]$, the total measured flux can be calculated by integrating the spectral flux density across the specified waveband.
+This process accounts for the contribution of all individual wavelengths within the range, providing a cumulative representation of the flux.
+The computation is expressed as:
+\begin{equation}
+    F(\lambda_1, \lambda_2) = \int_{\lambda_1}^{\lambda_2} F_\lambda \mathrm{d}\lambda
+\end{equation}
+
+% \begin{table}[h]
+%     \centering
+%     \caption{Radiometric measurements and their photometric analogs}
+%     \begin{tabular}{llll}
+%         \hline
+%         Radiometric    & Unit         & photometric        & Unit                          \\
+%         \hline
+%         Radiant energy & joule($J$)   & Luminous energy    & talbot (T)                    \\
+%         Radiant flux   & watt ($W$)   & Luminous flux      & lumen ($lm$)                  \\
+%         Intensity      & $W/sr$       & Luminous intensity & $lm/sr = candela (cd)$        \\
+%         Irradiance     & $W/m^2$      & Illuminance        & $lm/m^2 = lux$                \\
+%         Radiance       & $W/(m^2 sr)$ & Luminance          & $lm / (m^2sr) = cd/m^2 = nit$ \\
+%         \hline
+%     \end{tabular}
+% \end{table}
+
+% \subsection{Photometry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Spectral BRDF}
+\label{sec: spectral brdf}
+
+The BRDF is first introduced by Fred Nicodemus in 1965~\cite{1965_Nicodemus}, which is rigorously defined as the ratio of reflected radiance in a given viewing direction to the incident irradiance from a specified light source direction, at a given surface point $p$.
+It is typically expressed in units of $sr^{-1}$.
+However, the BRDF alone does  not capture the full complexity of how surfaces reflect light across different wavelengths.
+To gain a more comprehensive understanding of these interactions, we turn to the spectral BRDF which is an extension of the traditional BRDF~\cite{2022_Hebert}.
+It provides a wavelength-dependent function that characterizes how surfaces reflect light at specific incident and reflected angles at a given surface point $p$, across a narrow spectral bandwidth $\Delta \lambda$.
+Mathematically, it is expressed as:
+\begin{equation}
+    f_r(p, \lambda, \theta_i, \varphi_i, \theta_r, \varphi_r) = \frac{\mathrm{d}{L(p, \lambda, \theta_r, \theta_r)}}{\mathrm{d}E(p, \lambda, \theta_i, \varphi_i)},
+\end{equation}
+where:
+\begin{itemize}
+    \item $\lambda$ is the wavelength of light source;
+    \item $\theta_i$ and $\varphi_i$ are the zenith and azimuth angle of the unit incident direction $\overrightarrow{\omega_i}$:
+          \[
+              \overrightarrow{\omega_i} = (x_i, y_i, z_i)= (\sin\theta_i \cos \varphi_i, \sin\theta_i \sin\varphi_i, \cos\theta_i)
+          \]
+    \item $\theta_r$ and $\varphi_r$ are the zenith and azimuth angle of the unit reflected direction $\overrightarrow{\omega_r}$:
+          \[
+              \overrightarrow{\omega_r} = (x_r, y_r, z_r)= (\sin\theta_r \cos \varphi_r, \sin\theta_r \sin\varphi_r, \cos\theta_r)
+          \]
+    \item $\mathrm{d}L(p, \lambda, \theta_r, \theta_r)$ is the spectral reflected radiance for waveband $\Delta \lambda$;
+          \[
+              \mathrm{d}L(p, \lambda, \theta_r, \theta_r) = \int_{\Delta \lambda} \mathrm{d}L_\lambda(p, \theta_r, \varphi_r) \mathrm{d}\lambda
+          \]
+    \item $\mathrm{d}E(p, \lambda, \theta_i, \varphi_i)$ is the spectral incident irradiance for waveband $\Delta \lambda$.
+          \[
+              \mathrm{d}E(p, \lambda, \theta_i, \theta_i) = \int_{\Delta \lambda} \mathrm{d}E_\lambda(p, \theta_i, \varphi_i) \mathrm{d}\lambda
+          \]
+\end{itemize}
+
+Replacing the term $\mathrm{d}E(p, \lambda, \theta_i, \varphi_i)$ according to Equation~\eqref{eq_irradiance_radiance_intensity}, it can be defined in terms of incident radiance $L_i(p, \lambda, \theta_i, \varphi_i)$:
+\begin{equation}
+    f_r(p, \lambda, \theta_i, \varphi_i, \theta_r, \varphi_r) = \frac{\mathrm{d}{L(p, \lambda, \theta_r, \theta_r)}}{\cos\theta_i L_i(p, \lambda, \theta_i, \varphi_i) \mathrm{d} \theta_i \mathrm{d} \varphi_i}
+\end{equation}
+As both radiance and irradiance take into account the wavelength, the unit of spectral BRDF is still $[sr^{-1}]$.
+
+\textbf{Ideal diffuse reflection}
+
+One of the simplest and most widely used BRDF models is the Lambertian reflector, which is based on the assumption of a perfectly diffuse surface~\cite{2022_Hebert}.
+It has an angle-independent BRDF, proportional to their spectral albedo $\rho_d$ for a given wavelength $\lambda$:
+\begin{equation}
+    \label{eq_Lambertian}
+    f_{r(Lambertian)}(p, \lambda, \theta_i, \varphi_i, \theta_r, \varphi_r) = \frac{\rho_d}{\pi}
+\end{equation}
+
+\textbf{Ideal specular reflection}
+
+In contrast to diffuse reflection, the perfect specular BRDF describes light incoming a given direction is reflected in a single direction following the law of reflection~\cite{2012_Montes}:
+\begin{equation}
+    \label{eq_specular}
+    f_{r(specular)}(p, \lambda, \theta_i, \varphi_i, \theta_r, \varphi_r) = F_r(\lambda, \theta_i) \frac{\delta(\overrightarrow{\omega_r} - \overrightarrow{\omega_r^\prime})}{\cos\theta_r},
+\end{equation}
+where:
+\begin{itemize}
+    \item $\overrightarrow{\omega_r^\prime}$ is the mirror direction which is symmetric to the incoming direction $\overrightarrow{\omega_i}$:
+          \[
+              \overrightarrow{\omega_r^\prime} = 2(\overrightarrow{\omega_i} \cdot \overrightarrow{n})\overrightarrow{n} -\overrightarrow{\omega_i} = 2 \cos \theta_i \overrightarrow{n} - \overrightarrow{\omega_i} =(-\sin\theta_i \cos \varphi_i, -\sin\theta_i \sin\varphi_i, \cos\theta_i)
+          \]
+          So we can derive its corresponding zenith and azimuth angle $(\theta_r^\prime, \varphi_r^\prime) = (\theta_i, \varphi_i +\pi)$.
+    \item $\delta(\overrightarrow{\omega_r} - \overrightarrow{\omega_r^\prime})$ is the delta dirac function:
+          \[
+              \delta(\overrightarrow{\omega_r} - \overrightarrow{\omega_r^\prime}) = \begin{cases}
+                  \infty, & \mbox{if $\overrightarrow{\omega_r} = \overrightarrow{\omega_r^\prime}$} \\
+                  0,      & \mbox{otherwise}
+              \end{cases}
+          \]
+          Notice that Its integral over all directions equals $1$:
+          \[
+              \int_{\Omega} \delta(\overrightarrow{\omega_r} - \overrightarrow{\omega_r^\prime}) \mathrm{d} \overrightarrow{\omega_r} =1
+          \]
+          This ensures energy conservation in the reflection process.
+    \item $F_r(\lambda, \theta_i)$ is the Fresnel reflectance of unpolarized light for a given wavelength $\lambda$ following as:
+          \begin{equation}
+              \label{eq_fresnel}
+              F_r(\lambda, \theta_i) = \frac{1}{2}\left(r_{\parallel}(\lambda, \theta_i) + r_{\perp}(\lambda, \theta_i)\right)
+          \end{equation}
+          $r_{\parallel}(\lambda, \theta_i)$ and $r_{\perp}(\lambda, \theta_i)$ are the conventional Fresnel coefficient~\cite{2005_Lazanyi} for a given wavelength $\lambda$, respectively for parallel and perpendicular polarized light.
+          They are given as below while considering different interfaces:
+          \begin{itemize}
+              \item At the interface of two dielectric media:
+                    \[
+                        r_{\parallel}(\lambda, \theta_i) = \left[\frac{\eta_t \cos\theta_i - \eta_i\cos\theta_t}{\eta_t\cos\theta_i + \eta_i\cos\theta_t}\right]^2
+                    \]
+                    \[
+                        r_{\perp}(\lambda, \theta_i) = \left[\frac{\eta_i \cos\theta_i - \eta_t\cos\theta_t}{\eta_i\cos\theta_i + \eta_t\cos\theta_t}\right]^2
+                    \]
+                    Where $\eta_i, \eta_t$ are the refraction indices for the incident and transmitted media for a given wavelength $\lambda$.
+                    $\theta_t$ is the transmitted angle between the normal and transmitted direction:
+                    \[
+                        \sin\theta_t = \frac{\eta_i * \sin\theta_i}{\eta_t}
+                    \]
+              \item At the boundary between a conductor and a dielectric medium:
+                    \[
+                        r_{\parallel}(\lambda, \theta_i) = r_\perp(\lambda, \theta_i) \frac{\cos^2\theta_i(a^2 + b^2) - 2a\cos\theta_i\sin^2\theta_i + \sin^4\theta_i}%
+                        {\cos^2\theta_i(a^2 + b^2) + 2a\cos\theta_i\sin^2\theta_i + \sin^4\theta_i}
+                    \]
+                    \[
+                        r_{\perp}(\lambda, \theta_i) = \frac{a^2 + b^2 -2a\cos\theta_i + \cos^2\theta_i}{a^2 + b^2 +2a\cos\theta_i + \cos^2\theta_i}
+                    \]
+                    Where:
+                    \[
+                        \begin{array}{lll}
+                            2a^2                        & = \sqrt{(\eta^2 -k^2 -\sin^2\theta_i)^2 + 4\eta^2 k^2 } + (\eta^2 - k^2 -\sin^2\theta_i) \\
+                            2b^2                        & = \sqrt{(\eta^2 -k^2 -\sin^2\theta_i)^2 + 4\eta^2 k^2 } - (\eta^2 - k^2 -\sin^2\theta_i) \\
+                            a^2 + b^2                   & = \sqrt{(\eta^2 -k^2 -\sin^2\theta_i)^2 + 4\eta^2 k^2 }                                                    \\
+                            \eta + ik & = \frac{\eta_t + ik_t}{\eta_i+ ik_i}
+                        \end{array}
+                    \]
+
+          \end{itemize}
+
+          Computing the exact Fresnel term can be highly time-consuming.
+          To mitigate this, Schlick proposed an approximation in 1994~\cite{1994_Schlick}, which has become widely adopted in computer graphics~\cite{2005_Lazanyi,2021_Majercik}.
+          This approximation is following as below when considering different interfaces:
+          \begin{itemize}
+              \item At the interface between 2 dielectric mediums:
+                    \begin{equation}
+                        \label{eq_fresnel_dielectric_schlick}
+                        F_r(\lambda, \theta_i) = F_0(\lambda) + (1 - F_0(\lambda))(1-\cos\theta_i)^5
+                    \end{equation}
+                    The term $F_0(\lambda)$ is the reflection coefficient for light incoming parallel to the normal:
+                    \[
+                        F_0(\lambda) = \left(\frac{\eta_i - \eta_t}{\eta_i + \eta_t}\right)^2
+                    \]
+              \item At the interface between air/vacuum and a conductor:
+                    \begin{equation}
+                        \label{eq_fresnel_conductor_schlick}
+                        F(\lambda, \theta_i) = \frac{(\eta_t -1)^2 + 4\eta_t(1-\cos\theta_i)^5 + k_t^2 }{(\eta_t +1)^2 + k_t^2}
+                    \end{equation}
+                    where $\eta_t $ is the the index of refraction for the conductor and $k_t$ is the absorption coefficient of the conductor.
+          \end{itemize}
+          Notice that when this approximation is used in a microfacet-based BRDF model for describing specular reflection, the angle $\theta_i$ corresponds to the local incident angle $\theta_i^\prime$.
+          In geometry, it is the angle between the half-vector direction between half-vector direction $\overrightarrow{\omega_h} = \frac{\overrightarrow{\omega_i} + \overrightarrow{\omega_r}}{|\overrightarrow{\omega_i} + \overrightarrow{\omega_r}|}$ and the incident direction $\overrightarrow{\omega_i}$.
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Properties}
+
+Similar to traditional BRDF, a physically plausible spectral BRDF also has the below properties:
+\begin{itemize}
+    \item \textbf{Energy conservation}
+
+          A fundamental principle that must be adhered to by all BRDFs, including spectral BRDFs, is energy conservation.
+          This ensures that the amount of light reflected by a surface does not exceed the amount of light incident upon it.
+          Mathematically, this is often represented as:
+          \[
+              \int_{\varphi_r = 0}^{2\pi} \int_{\theta_r =0}^{\frac{\pi}{2}} f_r(p, \lambda, \theta_i, \varphi_i, \theta_r, \varphi_r) \cos(\theta_r) \sin(\theta_r) \mathrm{d}\theta_r \mathrm{d}\varphi_r \le 1
+          \]
+    \item \textbf{Reciprocity}
+
+          The Helmholtz Reciprocity Rule states that the reflection characteristics should remain unchanged if the directions of light incidence and observation are swapped:
+          \[
+              f_r(p, \lambda, \theta_i, \varphi_i, \theta_r, \varphi_r)  = f_r(p, \lambda,  \theta_r, \varphi_r, \theta_i, \varphi_i)
+          \]
+          It ensures that light behaves consistently in all directions.
+
+
+    \item \textbf{Non-negative}
+
+          The spectral BRDF is always non-negative, ensuring that the reflected radiance is physically meaningful:
+          \[
+              f_r(p, \lambda, \theta_i, \varphi_i, \theta_r, \varphi_r) \ge 0
+          \]
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Isotropic and anisotropic}
+
+As spectral BRDF is an extension of traditional BRDF, it can be classified into two categories based on whether they exhibit rotational symmetry or not~\cite{2012_Montes, 2015_Filip}: isotropic and anisotropic.
+A material is considered isotropic when its reflectance remains constant for a fixed view and illumination, regardless of the rotation of the material around its normal.
+Mathematically, it can be expressed in term of the azimuth angle difference between incident direction and reflected direction:
+\[
+    f_r(p, \lambda, \theta_i, \varphi_i, \theta_r, \varphi_r) = f_r(p, \lambda, \theta_i, \theta_r, \varphi_r - \varphi_i)
+\]
+
+In contrast, materials whose reflectance is not constant are considered anisotropic.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Solar albedo}
+
+Another important optical property of road surface, solar albedo (also called solar reflectance) is introduced and discussed in this section.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Types of albedo}
+
+Solar albedo of a given surface is defined as the ratio of upward and downward radiation flux~\cite{2015_Qu,2019_Chen}.
+This ratio can vary between 0 and 1, where 0 indicates no reflection and 1 signifies complete reflection.
+Surfaces with higher albedo values reflect more sunlight, leading to cooler temperatures, while those with lower values absorb more radiation, resulting in higher temperatures.
+As such, it becomes an important factor affecting the temperature of a sunlit surface and that of near-surface ambient air temperature.
+
+There are three primary types of albedo~\cite{2015_Qu} that are commonly discussed, each with distinct implications for environmental and climatic conditions.
+
+\begin{enumerate}
+    \item \textbf{Black sky albedo}
+
+          When the surface is illuminated with ideal directional radiation, the surface albedo is called black-sky albedo or directional-hemispherical reflectance:
+          \begin{equation}
+              \label{eq_black_sky_albedo}
+              \alpha_{black-sky}(\lambda, \theta_i, \varphi_i) = \frac{\int_{0}^{\pi/2} \int_{0}^{2\pi} L_\lambda(\theta_r, \varphi_r) \mathrm{d} \theta_i \mathrm{d} \varphi_i}{E_\lambda(\theta_i, \varphi_i)}
+          \end{equation}
+          Where $L_\lambda$ is the reflected radiance in the direction $\overrightarrow{\omega_r}$, and $E_\lambda$ is the incident irradiance from the direction $\overrightarrow{\omega_i}$.
+
+    \item \textbf{White sky albedo}
+
+          When the surface is illuminated with ideal diffuse radiation, the surface albedo is called white-sky albedo or bi-hemispherical reflectance:
+          \begin{equation}
+              \label{eq_white_sky_albedo}
+              \alpha_{white-sky}(\lambda) = \frac{\int_{0}^{\pi/2} \int_{0}^{2\pi}L_\lambda(\theta_r, \varphi_r) \mathrm{d} \theta_r \mathrm{d} \varphi_r}{E_\lambda}
+          \end{equation}
+          Different from the term $E_\lambda$ in black-sky albedo, here it represents the incident irradiance from all directions into the hemisphere.
+
+    \item \textbf{Blue sky albedo}
+
+          In fact, the solar albedo we measured is usually under natural daylight illumination, including both directional and diffuse radiation.
+          In this case, the surface albedo is called as blue-sky albedo, which can be approximately expressed as a linear combination of black-sky and white-sky albedo:
+          \begin{equation}
+              \label{eq_blue_sky_albedo}
+              \alpha_{blue-sky}(\lambda, \theta_i, \varphi_i) \thickapprox (1 - D(\tau, \lambda)) \alpha_{black-sky}(\lambda, \theta_i, \varphi_i) + D(\tau, \lambda) \alpha_{white-sky}(\lambda)
+          \end{equation}
+          Where $D(\tau, \lambda)$ gives the fraction of the diffuse radiation, varying with the aerosol optical wavelength $\tau$ and wavelength $\lambda$.
+\end{enumerate}
+
+For a given waveband, its corresponding surface albedo can be estimated using the following equation:
+\begin{equation}
+    \label{eq_albedo_broadband}
+    \alpha(\theta_i, \varphi_i) = \frac{\int_{\lambda_1}^{\lambda_2} E_\lambda(\theta_i, \varphi_i) \alpha_\lambda(\theta_i, \varphi_i) \mathrm{d}\lambda}{\int_{\lambda_1}^{\lambda_2} E_\lambda(\theta_i, \varphi_i) \mathrm{d}\lambda}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The link between BRDF and solar albedo}
+According to the definition of BRDF, black-sky albedo and white sky albedo, we can find the link between them.
+The black-sky albedo can be derived by integrating BRDF over the viewing hemisphere:
+\begin{equation}
+    \label{eq_brdf_black_albedo}
+    \alpha_{black-sky}(\lambda, \theta_i, \varphi_i) = \int_{\varphi_r = 0}^{2\pi} \int_{\theta_r = 0}^{\frac{\pi}{2}} f_r(\lambda, \theta_i,\varphi_i, \theta_r, \varphi_r) \cos\theta_r \sin\theta_r \mathrm{d}\theta_r \mathrm{d}\varphi_r
+\end{equation}
+Similarly, the white-sky albedo can be derived by integrating BRDF over the viewing hemisphere and incident hemisphere:
+\begin{equation}
+    \label{eq_brdf_white_albedo}
+    \alpha_{white-sky}(\lambda) = \frac{1}{\pi}\int_{\varphi_i = 0}^{2\pi} \int_{\theta_i = 0}^{\frac{\pi}{2}}%
+    \int_{\varphi_r = 0}^{2\pi} \int_{\theta_r = 0}^{\frac{\pi}{2}}% 
+    f_r(\lambda, \theta_i,\varphi_i, \theta_r, \varphi_r) %
+    \cos\theta_i \sin\theta_i%
+    \cos\theta_r \sin\theta_r%
+    \mathrm{d}\theta_i \mathrm{d}\varphi_i \mathrm{d}\theta_r \mathrm{d}\varphi_r
+\end{equation}
+
+For ideal diffuse reflection, we can conclude that the black-sky albedo and the white-sky albedo are equivalent to the albedo $\rho$ used in Equation~\ref{eq_Lambertian} by computing these two equations.
+
+
+
+
+
+
+
+

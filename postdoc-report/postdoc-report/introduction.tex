@@ -1,0 +1,49 @@
+\chapter{Introduction}
+
+\section{Context and objectives}
+
+In our daily lives, we have seen a variety of road surfaces, including bituminous (or asphalt) roads, concrete roads, earthen roads, gravel roads, and murram roads. 
+Among these, bituminous roads are the most commonly seen in our daily transportation due to their practicality, wear resistance and robustness.
+In the design and operation of mobility systems, many challenges, e.g. climate imperatives, the rise of active modes of transport, and the arrival of autonomous vehicles, require us to rethink a number of practices.
+In this context, the optical properties of road surface play a fundamental role in optimizing the energy consumption of public lighting installations~\cite{2021_Muzet}, reduce light pollution~\cite{2019_Muzet}, control urban temperature~\cite{2018_Rossi}, and consider perception of road markings~\cite{2020_Burghardt}.
+In favor of these issues, it becomes necessary to know the optical properties of road surface or be able to anticipate them when creating a surfacing or predicting their evolution over time.
+Consequently, this requires conducting a significant number of simulations or measurements.
+
+
+When discussing optical properties of road surface, both the Bidirectional Reflectance Distribution Function (BRDF) and solar albedo are essential because they provide complementary information about how the surface interacts with light. 
+The former provides detailed directional information, describing the angular distribution of reflected light based on the angle of incoming light and the viewing angle~\cite{2008_Jarosz}. 
+It captures how surface roughness, texture, and material composition affect light reflection, affecting the visibility of the road and markings~\cite{2010_Roser}.
+The latter gives an overall measure of reflected energy, representing the total fraction of incoming solar energy reflected by the road surface, without regard to direction~\cite{2011_KUSHARI}.
+Road surface with higher solar albedo reduces heat absorption by reflecting more sunlight back into the atmosphere, lowering cooling demands in nearby buildings and contributing to mitigate the damage on road materials. 
+
+
+These two properties depend on the physical characteristics of the road surface, such as roughness and refractive index.
+However, the measurement of BRDF or solar albedo is costly, not only in terms of instrumentation but also in the time required to measure it.
+This raises the question: if we already know the physical characteristics of a road surface, is it possible to derive its BRDF and solar albedo without direct measurement? 
+Specifically, if we have a road sample and know its formulation in terms of the material composition, sizes, and proportions.
+Can we establish a reliable relationship between these parameters and the resulting optical properties?
+However, the challenge lies in the fact that the relationship between the formulation of a road surface and its corresponding characteristics is not explicitly defined, complicating numerical simulation of the BRDF and so solar albedo. 
+Roads are typically composed of various materials, such as bitumen, different types of aggregates, and fillers, which further adds to the complexity.
+
+
+To simplify the problem, we propose to focus firstly on several single-component road samples to investigate appropriate BRDF models that can accurately fit their measured results. 
+So the problem becomes how to combine these BRDF models for each single-component to fit the measured BRDF of multi-component road sample.
+To explore and develop such methods is the objective of this work.
+
+\section{Mission}
+To achieve the objective, the mission follows 5 steps:
+\begin{enumerate}
+    \item Build several single-component road samples and measure their BRDF;
+    \item Fit the measured BRDF of each single-component road sample using existing BRDF models;
+    \item Build several multi-component road samples and measure their BRDF;
+    \item Explore and develop the method to combine the BRDFs of each single-component to fit the measurement of multi-component road samples;
+    \item Estimate the solar albedo using BRDF.
+\end{enumerate}
+
+\section{Report organization}
+This report is structured into the following chapters: 
+% In chapter 2, it provides the detailed definition and properties of BRDF, investigates several BRDF models used in road surface, and its measurement set-up.
+% Then it introduce the solar albedo including black sky albedo, white sky albedo and blue sky albedo and the link between solar albedo and BRDF.
+% In chapter 3, it summarizes the previous work on the simulation and measurement of single-component (e.g. different rocks), and investigates method about how to fit the measurement using BRDF models from literature study. Then it present measured and simulated results for each single-component road sample.
+% In chapter 4, it investigates the existing method of mix different BRDF models, and propose new method to combine all BRDF models of each single-component to fit the measurement. Then it presents the corresponding results for each multi-component road sample.
+% In chapter 5, it concludes this report and provides some new perspectives for future work.
