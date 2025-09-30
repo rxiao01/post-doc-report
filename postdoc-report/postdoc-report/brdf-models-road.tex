@@ -742,7 +742,8 @@ In essence, this model is a linear combination of Lambertian reflector and Phong
     + \frac{k_r(\theta_i) (n + 2)}{2 \pi} \left(\overrightarrow{\omega_i} \cdot \overrightarrow{\omega_r}\right)^n
 \end{equation}
 Where $k_d$, $k_s$ and $k_r$ are the parameters for diffuse component, specular component and retro-reflection component.
-And $\overrightarrow{\omega_{is}}$ is the specular reflection unit vector in the direction of $\varphi_i + \pi$.
+And $n$ represents the exponential parameter controlling the material's shininess, where larger values of $n$ produce large specular highlights.
+The term $\overrightarrow{\omega_{is}}$ is the specular reflection unit vector in the direction of $\varphi_i + \pi$.
 To satisfy the principle of energy conservation, these three factors are subject to the following constraint:
 \[
     k_d + k_s + k_r <1
