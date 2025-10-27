@@ -217,4 +217,9 @@ Ruiqiang Bai, Mingyi Zhang, Jiwei Wang, Guanji Li, and Zhilang You.
   slope surfaces in permafrost regions.
 \newblock {\em Solar Energy}, 237:352--364, 2022.
 
+\bibitem{CIE2019}
+CIE 2019, \textit{CIE spectral luminous efficiency for photopic vision},
+  International Commission on Illumination (CIE), Vienna, AT, DOI:
+  \href{https://doi.org/10.25039/CIE.DS.dktna2s3}{10.25039/CIE.DS.dktna2s3}.
+
 \end{thebibliography}
