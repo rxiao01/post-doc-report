@@ -51,6 +51,12 @@ Mathieu H{\'e}bert.
 \newblock {\em Optical models for material appearance}.
 \newblock EDP Sciences Les Ulis, France, 2022.
 
+\bibitem{1993_Ian}
+Ian Ashdown.
+\newblock Near-field photometry: a new approach.
+\newblock {\em Journal of the Illuminating Engineering Society},
+  22(1):163--180, 1993.
+
 \bibitem{1965_Nicodemus}
 Fred~E Nicodemus.
 \newblock Directional reflectance and emissivity of an opaque surface.
@@ -225,9 +231,17 @@ S{\'e}bastien Liandrat, Val{\'e}rie Muzet, Vincent Bour, J{\'e}r{\^o}me Dehon,
 \newblock In {\em Roads and Airports Pavement Surface Characteristics}, pages
   545--556. CRC Press, 2023.
 
-\bibitem{CIE2019}
-CIE 2019, \textit{CIE spectral luminous efficiency for photopic vision},
-  International Commission on Illumination (CIE), Vienna, AT, DOI:
-  \href{https://doi.org/10.25039/CIE.DS.dktna2s3}{10.25039/CIE.DS.dktna2s3}.
+\bibitem{2023_Muzet}
+Val{\'e}rie Muzet, S{\'e}bastien Liandrat, Vincent Bour, J{\'e}r{\^o}me Dehon,
+  and Jean-Pierre Christory.
+\newblock Is it possible to achieve quality lighting without considering the
+  photometry of the pavements?
+\newblock {\em Lighting Research \& Technology}, 55(4-5):345--365, 2023.
+
+\bibitem{2023_Boucher}
+Vincent Boucher, Val{\'e}rie Muzet, and Paola Iacomussi.
+\newblock Mathematical considerations for road reflection properties.
+\newblock In {\em The 30th Quadriennal Session of the CIE}, pages 1821--1828.
+  International Commission on Illumination, CIE, 2023.
 
 \end{thebibliography}

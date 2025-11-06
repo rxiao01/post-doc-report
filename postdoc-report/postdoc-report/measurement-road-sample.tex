@@ -1,7 +1,6 @@
 \chapter{Spectral BRDF Measurement of road samples}
 
 
-
 The design and operation of a transport system require careful consideration of numerous things, such as the installation of public lighting, minimizing light pollution, temperature control, and ensuring the visibility of road markings.
 Central to addressing these considerations is to know the reflectance of the road surface, which necessitates simulations or measurements.
 However, conducting these simulations or measurements is often costly due to the time requirements and the need for specialized equipment.
@@ -18,7 +17,7 @@ This model can then be fitted to the BRDF measurements to determine the weightin
 Accordingly, the BRDF of this pavement can be predicted or any direction of incidence and observation.
 However, achieving this lies in obtaining accurate and reliable spectral BRDF measurements, which serve as essential input to fitting process.
 
-To support this, this chapter first introduces 4 formulations of road samples and their constituent components.
+To support this, this chapter first introduces 2 formulations of road samples and their constituent components.
 Then it provides a spectral BRDF measurement method using the equipments developed by Cerema to measure their BRDF.
 This approach is validated first through through BRDF measurements on Spectralon (a material with well-known Lambertian reflection model and a given diffuse albedo), and then comparison with results obtained from Université Gustave Eiffel (UGE).
 The measured spectral BRDF results for both the composite (mix-material) and individual (single-material) samples are presented and analyzed in the last section.
@@ -33,69 +32,129 @@ For this purpose, this section then describes how to construct such samples.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{4 Formulations}
+\subsection{Two Road formula}
 
-The 4 formulations of road samples (F1, F2, F3, and F4) and their respective components are illustrated in Figure~\ref{fig:all-roads}, with their component proportions summarized in Table~\ref{tab:4-formulations}.
-Each formulation incorporates limestone filler, a very fine powder present in small proportions. 
+In this study, we chose 2 different formulations of road samples (provided by a French company - Spie Batignolles), along with their individual constituent materials (seen in Table~\ref{tab:2-formulations}).
+In order to ensure reliable BRDF measurements for each single-component sample, it requires that the surface to be measured must be flat, as shown in Figure~\ref{fig:F2-F3}.
+Each formulation incorporates limestone filler, a very fine powder present in small proportions.
 As such, the impact of limestone filler has been disregarded in the analysis.
-Formulations F1 and F4 share similar component structures, as do F2 and F3.
-The primary distinction between F1 and F4 lies in the aggregate composition: F1 incorporates a single type of rock, whereas F4 includes a mixture of two different rock types.
-Meanwhile, the difference between F2 and F3 is in the binder: F2 uses bitumen, while F3 employs a pigmented synthetic binder $TiO_2$.
+Formulations F2 and F3 share similar component structures.
+The main difference between them is in the binder: F2 uses bitumen, while F3 employs a pigmented synthetic binder $TiO_2$.
 Across all single-component samples, the materials can be broadly classified into two categories: binders and aggregates.
 The binders include bitumen and the synthetic binder.
-The aggregates comprise four main types:
+The aggregates comprise two main types:
 \begin{itemize}
-    \item Garonne rock in three size fractions (0/2 mm, 2/6 mm, and 6/10 mm),
-    \item Sorèze limestone (0/2 mm),
-    \item Lazard rock in two size fractions (2/6 mm and 6/10 mm),
-    \item Gouraudière rock (6/10 mm).
+    \item Sorrèze limestone (0/2 mm),
+    \item Lazard rock with two different size regions (2/6.3 mm and 6.3/10 mm).
 \end{itemize}
-
-
-\begin{figure}[!tb]
-    \centering
-    \includegraphics[width=1\linewidth]{./figures/spectral-brdf-measurements/all-roads.png}
-    \caption{4 formulations of roads and their components}
-    \label{fig:all-roads}
-\end{figure}
-
+For clarity, these two types Lazard are hereafter referred to as Lazard 2/6 and Lazard 6/10, respectively.
+It is difficult to perform direct measurements on binders, as creep occurs and the surface does remain perfectly planar.
+So we combine the Sorrèze limestone with bitumen and synthetic binder respectively.
+As such, we have two different mastics corresponding to F2 and F3 provided by the same French company (Spie Batignolles), as seen in Figure~\ref{fig:F2-F3}.
 
 \begin{table}[h]
     \centering
-    \caption{4 formulations}
-    \label{tab:4-formulations}
-    \begin{tabular}{lcccc}
+    \caption{Road formula (massive percentage)}
+    \label{tab:2-formulations}
+    \begin{tabular}{lcc}
         \hline
         \hline
-                               & F1       & F2       & F3       & F4       \\
+                               & F2        & F3        \\
         \hline
-        Limestone filler       & $1.4\%$  & $2.2\%$  & $1.4\%$  & $1.9\%$  \\
+        Limestone filler       & $2.2\%$   & $1.4\%$   \\
         \hline
-        $TiO_2$                & /        & /        & $0.5\%$  & /        \\
+        $TiO_2$                & $0.0\%$   & $0.5\%$   \\
         \hline
-        Bitumen                & $5.2\%$  & $5.3\%$  & /        & $5.4\%$  \\
+        Bitumen                & $5.3\%$   & $0.0\%$   \\
         \hline
-        Synthetic binder       & /        & /        & $5.4\%$  & /        \\
+        Synthetic binder       & $0.0\%$   & $5.4\%$   \\
         \hline
-        Garonne (0/2)          & $31.1\%$ & /        & /        & $29.5\%$ \\
+        Sorèze limestone (0/2) & $28.3\%$  & $27.5\%$  \\
         \hline
-        Garonne (2/6)          & $19.2\%$ & /        & /        & $19.8\%$ \\
+        Lazard (2/6)           & $19.5\%$  & $21.0\%$  \\
         \hline
-        Garonne (6/10)         & $43.1\%$ & /        & /        & /        \\
+        Lazard (6/10)          & $44.7\%$  & $44.2\%$  \\
         \hline
-        Sorèze limestone (0/2) & /        & $28.3\%$ & $27.5\%$ & /        \\
-        \hline
-        Lazard (2/6)           & /        & $19.5\%$ & $21\%$   & /        \\
-        \hline
-        Lazard (6/10)          & /        & $44.7\%$ & $44.2\%$ & /        \\
-        \hline
-        Gouraudière (6/10)     & /        & /        & /        & $43.4\%$ \\
-        \hline
-        Total                  & $100\%$  & $100\%$  & $100\%$  & $100\%$  \\
+        Total                  & $100.0\%$ & $100.0\%$ \\
         \hline
         \hline
     \end{tabular}
 \end{table}
+
+\begin{figure}[htbp]
+    \centering
+    \subfigure[F2 and its components]{\includegraphics[width=0.48\linewidth]{./figures/spectral-brdf-measurements/F2-samples.png}\label{fig:F2-samples}    }
+    \hfil
+    \subfigure[F3 and its components]{
+        \includegraphics[width=0.48\linewidth]{./figures/spectral-brdf-measurements/F3-samples.png}
+        \label{fig:F3-samples}
+    }
+    \caption{Two road formulations}
+    \label{fig:F2-F3}
+\end{figure}
+
+% The 4 formulations of road samples (F1, F2, F3, and F4) and their respective components are illustrated in Figure~\ref{fig:all-roads}, with their component proportions summarized in Table~\ref{tab:4-formulations}.
+% Each formulation incorporates limestone filler, a very fine powder present in small proportions. 
+% As such, the impact of limestone filler has been disregarded in the analysis.
+% Formulations F1 and F4 share similar component structures, as do F2 and F3.
+% The primary distinction between F1 and F4 lies in the aggregate composition: F1 incorporates a single type of rock, whereas F4 includes a mixture of two different rock types.
+% Meanwhile, the difference between F2 and F3 is in the binder: F2 uses bitumen, while F3 employs a pigmented synthetic binder $TiO_2$.
+% Across all single-component samples, the materials can be broadly classified into two categories: binders and aggregates.
+% The binders include bitumen and the synthetic binder.
+% The aggregates comprise four main types:
+% \begin{itemize}
+%     \item Garonne rock with three different size regions (0/2 mm, 2/6.3 mm, and 6.3/10 mm),
+%     \item Sorèze limestone (0/2 mm),
+%     \item Lazard rock with two different size regions (2/6.3 mm and 6.3/10 mm),
+%     \item Gouraudière rock (6/10 mm).
+% \end{itemize}
+% For clarity, these two types Lazard are hereafter referred to as Lazard 2/6 and Lazard 6/10, respectively.
+% Similarly, the 3 types of Garonne are called as Garonne 0/2,  Garonne 2/6 and LazardGaronne 6/10
+
+% \begin{figure}[!tb]
+%     \centering
+%     \includegraphics[width=1\linewidth]{./figures/spectral-brdf-measurements/all-roads.png}
+%     \caption{4 formulations of roads and their components}
+%     \label{fig:all-roads}
+% \end{figure}
+
+
+% \begin{table}[h]
+%     \centering
+%     \caption{Road formulas (massive percentage)}
+%     \label{tab:4-formulations}
+%     \begin{tabular}{lcccc}
+%         \hline
+%         \hline
+%                                & F1       & F2       & F3       & F4       \\
+%         \hline
+%         Limestone filler       & $1.4\%$  & $2.2\%$  & $1.4\%$  & $1.9\%$  \\
+%         \hline
+%         $TiO_2$                & /        & /        & $0.5\%$  & /        \\
+%         \hline
+%         Bitumen                & $5.2\%$  & $5.3\%$  & /        & $5.4\%$  \\
+%         \hline
+%         Synthetic binder       & /        & /        & $5.4\%$  & /        \\
+%         \hline
+%         Garonne (0/2)          & $31.1\%$ & /        & /        & $29.5\%$ \\
+%         \hline
+%         Garonne (2/6)          & $19.2\%$ & /        & /        & $19.8\%$ \\
+%         \hline
+%         Garonne (6/10)         & $43.1\%$ & /        & /        & /        \\
+%         \hline
+%         Sorèze limestone (0/2) & /        & $28.3\%$ & $27.5\%$ & /        \\
+%         \hline
+%         Lazard (2/6)           & /        & $19.5\%$ & $21\%$   & /        \\
+%         \hline
+%         Lazard (6/10)          & /        & $44.7\%$ & $44.2\%$ & /        \\
+%         \hline
+%         Gouraudière (6/10)     & /        & /        & /        & $43.4\%$ \\
+%         \hline
+%         Total                  & $100\%$  & $100\%$  & $100\%$  & $100\%$  \\
+%         \hline
+%         \hline
+%     \end{tabular}
+% \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Construction of single-material samples}
@@ -103,15 +162,15 @@ The aggregates comprise four main types:
 The procedure for fabricating a one-component sample with a flat surface is as follows:
 \begin{enumerate}
     \item Prepare all the materials and tools including:
-    \begin{itemize}
-        \item 3 liquid products (as illuminated in Fig~\ref{fig:3-materials}): Renlease QZ511, REN HY956 from RenShape and Resin - RENLAM MS-1
-        \item Aluminum mould, as seen in Fig~\ref{fig:mould-empty}
-        \item Brush
-        \item Stainless steel spatula
-        \item Mixing container
-        \item Clean aggregates
-        \item Fontainebleau sands
-    \end{itemize}
+          \begin{itemize}
+              \item 3 liquid products (as illuminated in Fig~\ref{fig:3-materials}): Renlease QZ511, REN HY956 from RenShape and Resin - RENLAM MS-1
+              \item Aluminum mould, as seen in Fig~\ref{fig:mould-empty}
+              \item Brush
+              \item Stainless steel spatula
+              \item Mixing container
+              \item Clean aggregates
+              \item Fontainebleau sands
+          \end{itemize}
 
     \item Clean the mould, then install the aluminum mould and secure it with 2 screws.
     \item Coating the mould with unmold liquid Renlease QZ511 using the brush, as seen in Fig~\ref{fig:module-oil}.
@@ -122,7 +181,6 @@ The procedure for fabricating a one-component sample with a flat surface is as f
     \item Pour the homogenous glue into the mould until it is full, then make sure the top surface is flat and leave to rest for 8 hours, as seen in Fig~\ref{fig:mould-3-material}
     \item Unmould this mould and remove the sand from the surface of the aggregates, as shown in Fig~\ref{fig:sample-final}.
 \end{enumerate}
-
 
 
 \begin{figure}[!tb]
@@ -200,252 +258,479 @@ The procedure for fabricating a one-component sample with a flat surface is as f
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Spectral BRDF Measurement}
 
-This section describes a measurement set-up developed by Cerema (see in Fig.~\ref{fig:gonio})~\cite{2021_Muzet,2023_Liandrat}, allowing for the elimination of environmental interferences and ensuring precise control over experimental conditions.
-The detailed measurement steps are then provided.
-To validate this measurement approach, we first measured the spectral BRDF of Spectralon with given diffuse albedo.
-
-
-
-\begin{figure}[!tb]
-    \centering
-    \includegraphics[width=0.9\linewidth]{./figures/optical-properties-of-road-surface/gonio-new.png}
-    \caption{Gonioreflectometer (Cerema)}
-    \label{fig:gonio}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Spectral BRDF Measurement set-up: the Gonioreflectometer at Cerema}
 
 
-The Gonioreflectometer is composed of:
-\begin{itemize}
-    \item light source: Halogene lamp (350nm -2500nm)
-    \item reception sensor: spectroradiometer
-    \item goniometer: changing the incident angle and viewing angles
-\end{itemize}
+The set-up developed by Cerema~\cite{2023_Liandrat, 2023_Muzet} was initially designed for measuring photometric BRDF in accordance with International Commission on Illumination (CIE) recommendations, as shown in Figure~\ref{fig:gonio-reflectometer}.
+It consists of 3 elements: light source, the sample holder and the camera.
+A halogen lamp with a broadband spectral emission ranging from $350nm$ to $2500nm$ is employed as the illumination source, and its spectrum is illustrated in Figure~\ref{fig:irrad_halogene_cerema}.
+It is mounted on a circular metal arc with a radius of $2.3 m$, allowing the sample to be illuminated at a constant distance from various zenith angles $\gamma$, ranging from vertical ($\gamma=0^\circ$) to grazing angles.
+The detection system comprises a camera calibrated in photometric luminance and mounted on a second circular metal arc with a radius of $1.9 m$, which allows the selection of any observation zenith angle ($\alpha$).
+This camera is attached to the end of a rotating metal arm ($1.8m$) and oriented toward the sample positioned along the arm’s axis, ensuring that the surface is always observed from the same viewpoint.
+By rotating this arm, the azimuthal angle ($\beta$) between the illumination and observation planes can be varied.
+The sample holder is positioned at another side of this rotating arm, and can be rotated around it to modify the azimuth angle $\delta$ between the observation plane and the axis of the sample (x axis).
+The joint movement of these 3 elements is performed automatically by a computer, which allows the light reflected by the sample surface to be measured under any lighting and observation configuration.
 
-
-
-
-
-\begin{figure}[!tb]
+\begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\linewidth]{./figures/spectral-brdf-measurements/gonio-spectroradiometer.png}
-    \caption{Gonio-spectroradiometer (Cerema)}
-    \label{fig:gonio-spectroradiometer}
+    \includegraphics[width=1\linewidth]{./figures/spectral-brdf-measurements/fig_irradiance_halogene.png}
+    \caption{Spectrum of halogene lamp (Cerema)}
+    \label{fig:irrad_halogene_cerema}
 \end{figure}
 
-\begin{figure}[!tb]
+As known, the camera is typically used to capture the photometric luminance.
+If we want to measure the spectral BRDF of roads, we need a sensor to be able to detect the spectral radiance, which is spectroradiometer.
+As seen in Figure~\ref{fig:gonio-spectro}, the new detection systems is placed at the same rotating arm, and consists of the lens, the lens support, the spectroradiometer, and the optical cable (used to connect the lens and the spectroradiometer).
+The camera in the original set-up is replaced by a lens connected with the spectroradiometer through a optical cable.
+Of course, to adjust the observation zenith angle is less flexible compared to the original set-up because we need to manually adjust the height of the lens support.
+Except this, the rest is still controlled by the computer.
+
+\begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\linewidth]{./figures/spectral-brdf-measurements/gonio-simple.png}
-    \caption{Gonio-spectroradiometer (Cerema)}
-    \label{fig:gonio-simple}
+    \includegraphics[width=1\linewidth]{./figures/spectral-brdf-measurements/gonio-new.png}
+    \caption{Gonioreflectometer (Cerema)}
+    \label{fig:gonio-reflectometer}
 \end{figure}
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{./figures/spectral-brdf-measurements/gonio-spec-new.png}
+    \caption{Gonio-spectroradiometer reception (Cerema)}
+    \label{fig:gonio-spectro}
+\end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Measurement steps}
+\subsection{Methodology}
 
+To have a better understanding of the measurement method, the simplified set-up is as shown in Figure~\ref{fig:gonio-spectro}.
+We have the main configuration parameters:
 \begin{itemize}
-    \item step 1 - installation of the spectroradiometer
-
-          There are several spectroradiometers: $1^{\circ}$ and $5^{\circ}$
-
-    \item step 2 - installation of the sample
-
-    \item step 3 - launch the software (GonioPilotageDesAxes) to turn on the Halogene lamp
-
-          When the software is on, then in this software
-          \begin{enumerate}
-              \item set the parameters
-                    \begin{itemize}
-                        \item choose COM3
-                        \item choose where to save the result files
-                    \end{itemize}
-
-              \item turn on COM ESP301 (green means it is on)
-              \item turn on the lamp (green means it is on)
-              \item access the measured screen
-              \item activate the remote control (yellow mean it is on)
-          \end{enumerate}
-
-    \item step 4 - launch python code to start the measurement
-          \begin{enumerate}
-              \item modify the $\alpha$, and change the saving sql file name for corresponding $\alpha$
-              \item change the height of spectroradiometer
-              \item launch the spectral evolution
-              \item launch the python codes
-              \item once the python codes is done, stop the spectral evolution
-          \end{enumerate}
-
-    \item step 6 - send sql file and measured radiance to Sebastian and receive the results in .csv file
+    \item $\gamma$: the incident zenith angle (the angle between the normal and the illumination plane);
+    \item $\alpha$: the observation zenith angle (the angle between the normal and the observation plane);
+    \item $\beta$: the azimuth angle between the illumination and observation planes;
+    \item $\delta$: the azimuth angle between the observation plane and the axis of the sample (x axis), not marked in the Figure~\ref{fig:gonio-spectro};
+    \item $\omega$: the Field Of View (FOV) of lens;
+    \item $l$: the distance between the lens center and the sample center, limited to the length of the rotating arm ($<1.8m$);
+    \item $H$: the height of the lens center relative to the horizontal plane of the sample surface, depending on $l$ and $\alpha$;
+    \item $D$: the diameter of light spot on the sample surface emitted from the lens center, depending on $\omega$, $l$ and $\alpha$.
+\end{itemize}
+Since the angles $\gamma, \beta, \delta$ can be adjusted automatically by the computer and not limited to measurement environment, so we could choose any values.
+However, the parameters $l$, $D$ and $H$ are constrained to the length of the rotating arm, the size of the sample, and the height of the measurement room, respectively.
+Following detailed evaluation, $l = 60\mathrm{cm}$ was adopted, and the observation angles ($\alpha$) were varied from $15^\circ$ to $55^\circ$ in increments of $5^\circ$.
+The resulting parameters $H$ and $D$, provided in Table~\ref{tab:configuration_parameters}, are within reasonable limits.
+To ensure sufficient measurements configurations, the chosen CIE angles configurations are summarized as below:
+\begin{itemize}
+    \item $\alpha$: ranging from $15^\circ$ to $55^\circ$ in increments of $5^\circ$;
+    \item $\beta$: $0^\circ, 10^\circ, 30^\circ, 50^\circ, 70^\circ, 90^\circ, 110^\circ, 130^\circ, 150^\circ, 160^\circ, 165^\circ, 170^\circ$;
+    \item $\gamma$: $0^\circ, 10^\circ, 15^\circ, 20^\circ, 25^\circ, 30^\circ, 35^\circ, 40^\circ, 45^\circ, 50^\circ, 55^\circ, 60^\circ, 65^\circ, 70^\circ, 75^\circ, 80^\circ$;
+    \item $\delta$: $0^\circ$.
 \end{itemize}
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\linewidth]{./figures/spectral-brdf-measurements/gonio-simple.png}
+    \caption{Complete Gonio-spectroradiometer set-up (Cerema)}
+    \label{fig:gonio-spectro}
+\end{figure}
 
-\textcolor{red}{Measurement set-up:\\
-    Provide the diagram of measurement set-up.
-}
+\begin{table}[h]
+    \centering
+    \caption{Configuration parameters for $l=60cm$}
+    \label{tab:configuration_parameters}
+    \begin{tabular}{lcc}
+        \hline
+        \hline
+        $\alpha$   & H ($cm$) & D ($cm$) \\
+        \hline
+        $15^\circ$ & $16.08$  & $18$     \\
+        \hline
+        $20^\circ$ & $21.84$  & $14.6$   \\
+        \hline
+        $25^\circ$ & $27.98$  & $12.5$   \\
+        \hline
+        $30^\circ$ & $34.64$  & $11.2$   \\
+        \hline
+        $35^\circ$ & $42.01$  & $10.5$   \\
+        \hline
+        $40^\circ$ & $50.35$  & $10.1$   \\
+        \hline
+        $45^\circ$ & $60$     & $10$     \\
+        \hline
+        $50^\circ$ & $71.51$  & $10.3$   \\
+        \hline
+        $55^\circ$ & $85.69$  & $10.8$   \\
+        \hline
+        \hline
+    \end{tabular}
+\end{table}
+
+According to the definition of BRDF, it is expressed a function of 4 angles ($\theta_i, \phi_i, \theta_r, \phi_r$) in the spherical coordinate system.
+Therefore, it is necessary to convert the CIE standard angles ($\alpha,  \beta, \gamma, \delta$) into the corresponding spherical angles~\cite{2023_Boucher}:
+\begin{equation}
+    \label{eq:cie-to-sph}
+    \begin{array}{lll}
+        \theta_i & = & \gamma                  \\
+        \phi_i   & = & \delta -\beta  \ [2\pi] \\
+        \theta_r & = & \pi / 2 - \alpha        \\
+        \phi_r   & = & \delta + \pi \ [2\pi]
+    \end{array}
+\end{equation}
+Accordingly, the spherical angles $\theta_i, \phi_i, \theta_r, \phi_r$ are:
+\begin{itemize}
+    \item $\theta_i$ (16 values): $0^\circ, 10^\circ, 15^\circ, 20^\circ, 25^\circ, 30^\circ, 35^\circ, 40^\circ, 45^\circ, 50^\circ, 55^\circ, 60^\circ, 65^\circ, 70^\circ, 75^\circ, 80^\circ$;
+    \item $\phi_i$ (1 value): $360^\circ, 350^\circ, 330^\circ, 310^\circ, 290^\circ, 270^\circ, 250^\circ, 230^\circ, 210^\circ, 200^\circ, 195^\circ, 190^\circ$;
+    \item $\theta_r$ (9 values): ranging from $35^\circ$ to $75^\circ$ with a step of $5^\circ$
+    \item $\phi_r$ (12 values): $180^\circ$
+\end{itemize}
+This results in a total of $1728$ ($= 16 \times 1 \times 9 \times 12$) measurements configurations for each samples.
+Assuming that all samples are isotropic, the angles $\phi_i$ and $\phi_r$ can be interchanged, allowing observation of the BRDF distribution over the hemispherical space for a given incident direction $(\theta_i, \phi_i)$.
+Owing to the symmetric emission pattern of the halogen lamp, the BRDF at the symmetric angle of $\phi_r$ an be obtained from that at $\phi_r$.
+Thus the new spherical angles $\theta_i, \phi_i, \theta_r, \phi_r$ for measurements becomes:
+\begin{itemize}
+    \item $\theta_i$ (16 values): $0^\circ, 10^\circ, 15^\circ, 20^\circ, 25^\circ, 30^\circ, 35^\circ, 40^\circ, 45^\circ, 50^\circ, 55^\circ, 60^\circ, 65^\circ, 70^\circ, 75^\circ, 80^\circ$;
+    \item $\phi_i$ (1 value): $180^\circ$;
+    \item $\theta_r$ (9 values): ranging from $35^\circ$ to $75^\circ$ with a step of $5^\circ$
+    \item $\phi_r$ (24 values): $0^\circ, 10^\circ, 30^\circ, 50^\circ, 70^\circ, 90^\circ, 110^\circ, 130^\circ, 150^\circ, 160^\circ, 165^\circ, 170^\circ$, $190^\circ, 195^\circ$, $200^\circ, 210^\circ, 230^\circ, 250^\circ, 270^\circ, 290^\circ, 310^\circ, 330^\circ, 360^\circ$
+\end{itemize}
+In reality, although only $1728$ measurements are required, this process yields $3456$ measured data points.
+As know, the BRDF represents the ratio of reflected radiance to incident irradiance, requiring both quantities to be measured separately.
+The incident irradiance at normal incidence ($\theta_i = 0^\circ$) over the wavelength range of $350 nm$ to $2500 nm$, is first measured using a calibrated diffuser.
+For oblique incident angles, the corresponding irradiance estimated by scaling the normal-incident irradiance by the cosine of the incidence angle $\cos\theta_i$.
+This cosine dependence is experimentally verified by comparing the measured flux at various incidence angles $\theta_i$ with the predicted flux, calculated as the normal-incident flux $F_{\theta_i=0}$ multiplied by $\cos\theta_i$.
+The comparison is shown in Table~\ref{tab:measured_flux_comparison}.
+Notice that the relative error is the ratio between the absolute difference of the measured and predicted fluxes and the measured flux.
+With $\theta_i$ ranging from $0^\circ$ to $80^\circ$, the relative deviation remains below $5\%$, confirming the validity of the cosine law.
+When $\theta_i$ exceeds $80^\circ$, the light source becomes nearly coplanar with the sample surface.
+Due to the conical emission profile of the light source (Halogen lamp), the measured flux does not vanish as $\theta_i$ approaches $90^\circ$.
+For this reason, measurements at incident angles greater than than $80^\circ$ were excluded to maintain measurement reliability.
+After obtaining the incident irradiance, the focus shifts to the measurements of the reflected radiance for all selected samples.
+
+
+\begin{table}[h]
+    \centering
+    \caption{Measured flux $F_{\theta_i}$ at different $\theta_i$ vs measured normal-incident flux $F_{\theta_i=0}$ multiplied by $\cos\theta_i$ }
+    \label{tab:measured_flux_comparison}
+    \begin{tabular}{llll}
+        \hline
+        \hline
+        $\theta_i$ & Measured            & Normal-incident flux                          & Relative  \\
+                   & flux $F_{\theta_i}$ & $F_{\theta_i=0}$ multiplied by $\cos\theta_i$ & error     \\
+        \hline
+        $0^\circ$  & $532.0$             & $532.0$                                       & $0.0\%$   \\
+        \hline
+        $20^\circ$ & $508.0$             & $499.9$                                       & $1.6\%$   \\
+        \hline
+        $40^\circ$ & $415.0$             & $407.5$                                       & $1.8\%$   \\
+        \hline
+        $60^\circ$ & $267.0$             & $266.0$                                       & $0.4\%$   \\
+        \hline
+        $65^\circ$ & $222.6$             & $224.8$                                       & $1.0\%$   \\
+        \hline
+        $70^\circ$ & $181.3$             & $182.0$                                       & $0.4\%$   \\
+        \hline
+        $80^\circ$ & $96.7$              & $93.4$                                        & $3.4\%$   \\
+        \hline
+        $82^\circ$ & $82.1$              & $74.0$                                        & $10.0\%$  \\
+        \hline
+        $84^\circ$ & $67.3$              & $55.6$                                        & $17.4\%$  \\
+        \hline
+        $86^\circ$ & $54.1$              & $37.1$                                        & $31.4\%$  \\
+        \hline
+        $88^\circ$ & $42.3$              & $18.6$                                        & $56.0\%$  \\
+        \hline
+        $90^\circ$ & $31.4$              & $0.0$                                         & $100.0\%$ \\
+        \hline
+        \hline
+    \end{tabular}
+\end{table}
+
+In order to obtain accurate and reliable measurements of spectral radiance(step: 1-2-3-4-6-7-8) or irradiance (step: 1-2-3-4-5-7-8), the procedure is as follows:
+\begin{enumerate}
+    \item Turn on the halogen lamp and let it warm up $25$ minutes to generate stable radiation;
+    \item Turn on the goniometer,the computer connected it and the software controlling it;
+    \item Turn on the spectroradiometer, the computer connected it and the software used to record the spectral irradiance or radiance;
+    \item Verify good connection between the lens and spectroradiometer;
+    \item When measuring irradiance, place the diffuser at the center of the sample holder and adjust the height of the sample holder, ensuring that its surface is aligned horizontally with both the halogen lamp at $\theta_i = 90^\circ$ and the camera at $\theta_r = 90^\circ$;
+    \item When measuring radiance,
+          \begin{itemize}
+              \item place the test sample on the center of the sample holder and adjust the height of sample holder,  ensuring that its surface is aligned horizontally with both the halogen lamp at $\theta_i = 90^\circ$ and the camera at $\theta_r = 90^\circ$;
+              \item adjust the position of the lens, ensuring it is aligned vertically with both camera and the sample holder;
+              \item adjust the height of the lens to correspond to the given configuration angle $\theta_r$;
+          \end{itemize}
+    \item Launch the codes to start the measurements for all given angles configurations ($\theta_i,\phi_i, \theta_r, \phi_r$);
+    \item Let the software automatically record the irradiance or radiance;
+\end{enumerate}
+Having both measured irradiance and radiance, we can compute the spectral BRDF for each sample.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Validation with Spectralon}
+\subsection{Validation on a calibrated reflectance target}
 
-So here we will provide the BRDF along the wavelength ($350nm - 2500nm$) and its BRDF distribution which should be unit hemisphere.
+The first validation is to compare the measured BRDF of spectralon with its theoretical BRDF.
+The Spectralon is a white surface which has near-perfect Lambertian behavior.
+For a given diffuse albedo $\rho_d$, its BRDF can be computed as:
+\begin{equation}
+    \label{eq:lambertian}
+    f_r(\theta_i, \phi_i, \theta_r, \phi_r, \lambda) = \frac{\rho_d}{\pi}
+\end{equation}
+Figure~\ref{fig:brdf-spectralon} shows the measured BRDF of Spectralon with a diffuse albedo of $0.5$ at incident normal direction from $350$ to $2500 nm$, considering different observation angles.
+The measured BRDF exhibits noticeable fluctuations along with wavelength, particularly in the near-infrared region.
+To better understand how far from measured data to the expected BRDF of Spectralon which is $\rho/\pi=0.16$, the relative errors at each wavelength are calculated and displayed in Figure~\ref{fig:rel-err-spectralon}.
+In the visible range, relative errors remain below $20\%$, while in the near-infrared region they are generally below $60\%$, with larger variations observed.
+Overall, the results show consistency with the expected behavior between $500nm$ and $1725nm$, confirming the accuracy and reliability of the proposed measurement method.
+
+% Despite these variations, the overall BRDF remains consistent with the expected reference value of $0.16$. 
+% It demonstrate good agreement with measured data and thereby validates the accuracy and reliability of our measurement methods.
+
+\begin{figure}[htbp]
+    \centering
+    \subfigure[Measured spectral BRDF of Spectralon with diffuse albedo $\rho=0.5$]{\includegraphics[width=0.9\linewidth]{./figures/spectral-brdf-measurements/validation-spectralon.png}\label{fig:brdf-spectralon}   }
+    \hfil
+    \subfigure[Relative error referring to expected BRDF of Spectralon ($\rho/\pi=0.16$) ]{
+        \includegraphics[width=0.9\linewidth]{./figures/spectral-brdf-measurements/validation-spectralon-rel-err}
+        \label{fig:rel-err-spectralon}
+    }
+    \caption{Results of Spectralon}
+    \label{fig:validation-spectralon}
+\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Comparison with UGE}
-First we compared our results with that of UGE, to see if our measured matched with that of UGE.
-For most configurations, there is a good match, but for some configurations, like large incident.
-For these cases, there are direct light reaching the lens, leading to more radiance detected by the spectroradiometer.
-To further validate our method, we measure the BRDF of Spectralon which offers Lambertian BRDF with given diffuse albedo.
+\subsection{Validation by comparison with measurements conducted by UGE}
 
-Transform the irradiance or radiance to illuminance or luminance~\cite{CIE2019}.
+The second validation is performed by comparing the BRDF measurements obtained using our method with those acquired by Université Gustave Eiffel (UGE).
+Since the BRDF data provided by UGE are photometric, our measured spectral BRDF must be converted into a corresponding photometric BRDF for comparison.
+To achieve this, the measured irradiance $E_\lambda$ and radiance $L_\lambda$ within the visible range ($360$–$830 nm$) have to be transformed into illuminance $E_{vis}$ and luminance $L_{vis}$ respectively, using the conversion equations (see Equation~\eqref{eq_irradiance_radiance_intensity}) provided by \href{https://doi.org/10.25039/CIE.DS.dktna2s3}{CIE}.
+In this validation, we compare the photometric BRDF of two samples: F2 and Lazard 6/10.
+At UGE, measurements were conducted for $3000$ configurations, while at Cerema, $1728$ configurations were measured.
+Only the $193$ configurations common to both datasets were used for direct comparison, as shown in Table~\ref{tab:193-configurations}
 
+
+\begin{table}[h]
+    \centering
+    % \small
+    \footnotesize
+    \caption{193 common configurations}
+    \label{tab:193-configurations}
+    \begin{tabular}{llll}
+        \hline
+        \hline
+        Configuration $N^\circ$ & $\alpha$   & $\beta$                        & $\gamma$                                                                         \\
+        \hline
+        1-3                     & $15^\circ$ & $0^\circ, 10^\circ, 170^\circ$ & $45^\circ$                                                                       \\
+        \hline
+        4-10                    & $20^\circ$ & $0^\circ$                      & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 60^\circ, 70^\circ, 80^\circ $           \\
+        \hline
+        11-17                   & $20^\circ$ & $10^\circ$                     & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 60^\circ, 70^\circ, 80^\circ $           \\
+        \hline
+        18-25                   & $20^\circ$ & $50^\circ$                     & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 45^\circ, 60^\circ, 70^\circ, 80^\circ $ \\
+        \hline
+        26-33                   & $20^\circ$ & $90^\circ$                     & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 45^\circ, 60^\circ, 70^\circ, 80^\circ $ \\
+        \hline
+        34-41                   & $20^\circ$ & $130^\circ$                    & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 45^\circ, 60^\circ, 70^\circ, 80^\circ $ \\
+        \hline
+        42-49                   & $20^\circ$ & $160^\circ$                    & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 45^\circ, 60^\circ, 70^\circ, 80^\circ $ \\
+        \hline
+        50-56                   & $20^\circ$ & $170^\circ$                    & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 60^\circ, 70^\circ, 80^\circ $           \\
+        \hline
+        57-59                   & $25^\circ$ & $0^\circ, 10^\circ, 170^\circ$ & $45^\circ$                                                                       \\
+        \hline
+        60-66                   & $30^\circ$ & $0^\circ$                      & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 60^\circ, 70^\circ, 80^\circ $           \\
+        \hline
+        67-73                   & $30^\circ$ & $10^\circ$                     & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 60^\circ, 70^\circ, 80^\circ $           \\
+        \hline
+        74-80                   & $30^\circ$ & $50^\circ$                     & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 45^\circ, 70^\circ, 80^\circ $           \\
+        \hline
+        81-88                   & $30^\circ$ & $90^\circ$                     & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 45^\circ, 60^\circ, 70^\circ, 80^\circ $ \\
+        \hline
+        89-96                   & $30^\circ$ & $130^\circ$                    & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 45^\circ, 60^\circ, 70^\circ, 80^\circ $ \\
+        \hline
+        97-104                  & $30^\circ$ & $160^\circ$                    & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 45^\circ, 60^\circ, 70^\circ, 80^\circ $ \\
+        \hline
+        105-111                 & $30^\circ$ & $170^\circ$                    & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 60^\circ, 70^\circ, 80^\circ $           \\
+        \hline
+        112-114                 & $35^\circ$ & $0^\circ, 10^\circ, 170^\circ$ & $45^\circ$                                                                       \\
+        \hline
+        115-120                 & $40^\circ$ & $0^\circ$                      & $0^\circ, 10^\circ, 30^\circ, 60^\circ, 70^\circ, 80^\circ $                     \\
+        \hline
+        121-127                 & $40^\circ$ & $10^\circ$                     & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 60^\circ, 70^\circ, 80^\circ $           \\
+        \hline
+        128-134                 & $40^\circ$ & $170^\circ$                    & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 60^\circ, 70^\circ, 80^\circ $           \\
+        \hline
+        135-136                 & $45^\circ$ & $0^\circ, 10^\circ$            & $45^\circ$                                                                       \\
+        \hline
+        137-144                 & $45^\circ$ & $50^\circ$                     & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 45^\circ, 60^\circ, 70^\circ, 80^\circ $ \\
+        \hline
+        145-152                 & $45^\circ$ & $90^\circ$                     & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 45^\circ, 60^\circ, 70^\circ, 80^\circ $ \\
+        \hline
+        153-160                 & $45^\circ$ & $130^\circ$                    & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 45^\circ, 60^\circ, 70^\circ, 80^\circ $ \\
+        \hline
+        161-168                 & $45^\circ$ & $160^\circ$                    & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 45^\circ, 60^\circ, 70^\circ, 80^\circ $ \\
+        \hline
+        169                     & $45^\circ$ & $170^\circ$                    & $45^\circ$                                                                       \\
+        \hline
+        170-176                 & $50^\circ$ & $0^\circ$                      & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 60^\circ, 70^\circ, 80^\circ $           \\
+        \hline
+        177-183                 & $50^\circ$ & $10^\circ$                     & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 60^\circ, 70^\circ, 80^\circ $           \\
+        \hline
+        184-190                 & $50^\circ$ & $170^\circ$                    & $0^\circ, 10^\circ, 20^\circ, 30^\circ, 60^\circ, 70^\circ, 80^\circ $           \\
+        \hline
+        191-193                 & $50^\circ$ & $0^\circ, 10^\circ, 170^\circ$ & $45^\circ$                                                                       \\
+        \hline
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+    \centering
+    \subfigure[Photometric BRDF]{\includegraphics[width=0.48\linewidth]{./figures/spectral-brdf-measurements/fig_F2_brdf_validation.png}\label{fig:F2-brdf-comparison-uge-cerema}    }
+    \hfil
+    \subfigure[Relative error]{
+        \includegraphics[width=0.48\linewidth]{./figures/spectral-brdf-measurements/fig_F2_rel_err_validation.png}
+        \label{fig:F2-relative-error-uge-cerema}
+    }
+    \caption{F2: comparison between UGE and Cerema}
+    \label{fig:F2-validation}
+\end{figure}
+
+
+\begin{figure}[htbp]
+    \centering
+    \subfigure[Photometric BRDF]{\includegraphics[width=0.48\linewidth]{./figures/spectral-brdf-measurements/fig_lazard_6_10_brdf_validation.png}\label{fig:Lazard-brdf-comparison-uge-cerema}    }
+    \hfil
+    \subfigure[Relative error]{
+        \includegraphics[width=0.48\linewidth]{./figures/spectral-brdf-measurements/fig_lazard_6_10_rel_err_validation.png}
+        \label{fig:Lazard-relative-error-uge-cerema}
+    }
+    \caption{Lazard 6/10: comparison between UGE and Cerema}
+    \label{fig:Lazard-validation}
+\end{figure}
+
+Figures~\ref{fig:F2-brdf-comparison-uge-cerema} and~\ref{fig:Lazard-brdf-comparison-uge-cerema} illustrate the comparison, with blue dots representing the BRDF measured at UGE and orange dots representing measurements from Cerema.
+Some discrepancies between the two datasets are evident for certain configurations.
+To quantify these differences, the relative error with respect to the UGE measurements is calculated, as shown in Figures~\ref{fig:F2-relative-error-uge-cerema} and~\ref{fig:Lazard-relative-error-uge-cerema}.
+For sample F2, the relative difference ranges from $0$ to $0.35$, with $73\%$ of configurations exhibiting less than $10\%$ difference. For Lazard 6/10, the relative difference ranges from $0$ to $0.3$, with over $96\%$ of configurations showing less than $10\%$ difference.
+The relative error of sample F2 is lower than that of sample lazard 6/10 across the $193$ common configurations.
+This occurs because the BRDF values of sample F2 are generally lower, so an equivalent absolute deviation results in a proportionally larger relative error.
+Overall, our measurements show good agreement with those from UGE for most configurations.
+However, larger discrepancies are observed at high incident angles ($\theta_i = 80^\circ$) and large reflection angles ($\theta_r > 60^\circ$).
+These differences are likely caused by direct light entering the lens due to the close horizontal positioning of the light source and the lens, combined with the conical nature of the illumination.
+As a result, part of the incident light is directly captured by the detector, increasing the measured BRDF relative to the UGE reference and leading to higher relative errors in these affected configurations.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
 
-\subsection{Methodology}
 
-The wavelength $350nm$ to $2500nm$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Measured spectral BRDF of 5 samples from $350$–$2500nm$}
 
-Measurement scenario
-\begin{itemize}
-    \item $l$ - the horizontal distance between the sample and the spectroradiometer
-    \item $H$ - the height difference between spectroradiometer and the sample
-    \item $\gamma$ - the incident angle ($\gamma = \theta_i$): $0^{\circ} - 90^{\circ}$
-
-    \item $\alpha$ - the observation angle ($\alpha = \frac{\pi}{2} - \theta_r$): $0^{\circ} - 90^{\circ}$
-
-    \item $\beta$ - the angle between the vertical planes of illumination and observation ($\beta = \pi - (\phi_r - \phi_i)$)
-    \item $\delta$ - the angle between the observation plane and the roadway (x) axis ($\delta = \phi_r - \pi$)
-\end{itemize}
+For each measurement configuration characterized by the spherical angles $\theta_i, \phi_i, \theta_r, \phi_r$, the spectral BRDF values are determined over the wavelength range from $350nm$ to $2500nm$.
+Figure~\ref{fig:all-brdf-wavelength} illustrates the measured BRDF for a particular incident direction ($\theta_i=60^\circ, \phi_i=180^\circ$) under both forward ($\theta_r=60^\circ, \phi_r=0^\circ$) and backward ($\theta_r=60^\circ, \phi_r=165^\circ$) observation geometries.
+Across all samples, the BRDF values exhibit a monotonic increase within the visible range, followed by pronounced oscillations in the infrared region.
+Notably, in the forward direction, the BRDF values of F2, mastic F2, and mastic F3 are consistently higher than in the backward direction, whereas F3 and Lazard 6/10 display the opposite trend. Lazard 2/6 shows only minor directional dependence.
+Comparison across samples reveals that single-component Lazard samples exhibit higher BRDF values than F2 and F3 composites in both the visible and infrared ranges, irrespective of observation direction.
+In the backward direction, mastic F3 and mastic F2 have lower BRDF values than their respective base materials (F3 and F2), while in the forward direction, the opposite trend is observed. 
+This effect is particularly pronounced for mastic F3, which shows a substantial forward–backward asymmetry, indicative of strong specular reflection behavior.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Results of 4 Mixed Road-Material Samples}
-
-Figure : in the same figures, plot 4 curves respectively for F1, F2, F3, F4
-For a given configuration ($\theta_i, \phi_i, \theta_r, \phi_r$): the BRDF along the wavelength ($350nm - 2500nm$)
-
-Analyze Figure 1:
-\begin{itemize}
-    \item comparison between F1 and F4: 1 rock different
-    \item comparison between F2 and F3: the binder different
-\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Visualization of BRDF over hemisphere}
+To explore specular and retro reflections for all these samples, their BRDF distributions in whole hemisphere for a given incident direction ($\theta_i=60^\circ, \phi_i=180^\circ$) are visualized in Figure~\ref{fig:brdf-distribution}, considering a wavelength of $600 nm$ within the visible range.
+Owing to constraints of the measurement environment, the data corresponding to observation geometries with $\theta_r <35^\circ$ and $\theta_r >75^\circ$ could not be acquired, resulting in a missing region (“hole”) in the BRDF distributions of all samples.
+Inspection of the distributions reveals pronounced specular reflections in all samples, particularly for mastic F2 and mastic F3, consistent with the previously observed higher BRDF values compared to F2 and F3, respectively. 
+In addition, retro-reflective features are evident in F2, F3, and Lazard samples of both sizes.
+Notably, F3 and the Lazard samples exhibit similar BRDF distribution patterns, showing stronger retro-reflection relative to specular reflection. 
+Conversely, F2, mastic F2, and mastic F3 demonstrate the opposite behavior, where specular reflection dominates over retro-reflection.
 
 
-Figure:
-BRDF distribution: 2 subfigures respectively for F1 and F4
+\begin{figure}[htbp]
+    \centering
+        \subfigure[$\theta_r = 60^\circ,\phi_r=0^\circ$]{\includegraphics[width=0.48\linewidth]{./figures/spectral-brdf-measurements/results/fig_all_brdf_wavelength_theta_i_60_forward.png}\label{fig:all-brdf-theta-i-60-forward}    }
+    \hfil
+    \subfigure[$\theta_r = 60^\circ,\phi_r=165^\circ$]{\includegraphics[width=0.48\linewidth]{./figures/spectral-brdf-measurements/results/fig_all_brdf_wavelength_theta_i_60_backward.png}\label{fig:all-brdf-theta-i-60-backward}    }
+    \caption{Measured spectral BRDF at $\theta_i = 60^\circ, \phi_i = 180^\circ$ from $350nm$ to $2500nm$ }
+    \label{fig:all-brdf-wavelength}
+\end{figure}
 
 
-Figure:
-BRDF distribution: 2 subfigures respectively for F1 and F4
+\begin{figure}[htbp]
+    \centering
+    \subfigure[F2]{\includegraphics[width=0.48\linewidth]{./figures/spectral-brdf-measurements/results/F2_brdf_dis.png}\label{fig:F2-brdf-dis}    }
+    \hfill
+    \subfigure[F3]{\includegraphics[width=0.48\linewidth]{./figures/spectral-brdf-measurements/results/F3_brdf_dis.png}\label{fig:F3-brdf-dis}    }
+    \hfill
+    \subfigure[Mastic F2]{\includegraphics[width=0.48\linewidth]{./figures/spectral-brdf-measurements/results/mastic_F2_brdf_dis.png}\label{fig:mastic-F2-brdf-dis}    }
+    \hfill
+    \subfigure[Mastic F3]{\includegraphics[width=0.48\linewidth]{./figures/spectral-brdf-measurements/results/mastic_F3_brdf_dis.png}\label{fig:mastic-F3-brdf-dis}    }    
+    \hfill
+    \subfigure[Lazard 2/6]{\includegraphics[width=0.48\linewidth]{./figures/spectral-brdf-measurements/results/lazard_2_6_brdf_dis.png}\label{fig:lazard-2-6-brdf-dis}    }    
+    \hfill
+    \subfigure[Lazard 6/10]{\includegraphics[width=0.48\linewidth]{./figures/spectral-brdf-measurements/results/lazard_6_10_brdf_dis.png}\label{fig:lazard-6-10-brdf-dis}    }      
+    \caption{BRDF distribution at $\theta_i=60^\circ, \phi_i=180^\circ$ for $\lambda=600nm$}
+    \label{fig:brdf-distribution}
+\end{figure}
 
 
-Figure:
-For given ($\theta_i, \phi_i, \theta_r$): plot 4 curves in polar system
-Analyze Figure 4:
-\begin{itemize}
-    \item comparison between F1 and F4: 1 rock different
-    \item comparison between F2 and F3: the binder different
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Results of 3 Mastics}
-
-Mastic 1 for F1 and F4: bitume and rock Garonne
-
-Mastic 2  for F2: bitume and rock calcaire sorrèze
-
-Mastic 3 for F3: Liant de synthèse pigmenté TiO2 and rock calcaire sorrèze
+\begin{figure}[htbp]
+    \centering
+        \subfigure[F2 and its components]{\includegraphics[width=0.48\linewidth]{./figures/spectral-brdf-measurements/results/fig_polar_F2_components.png}\label{fig:polar-F2-components}    }
+    \hfil
+    \subfigure[F3 and its components]{\includegraphics[width=0.48\linewidth]{./figures/spectral-brdf-measurements/results/fig_polar_F3_components.png}\label{fig:polar-F3-components}    }
+    \caption{Measured spectral BRDF distribution at $\theta_i=60^\circ, \phi_i=180^\circ, \theta_r=60^\circ$ for $\lambda=600nm$ for F2, F3 and their components}
+    \label{fig:brdf-distribution-polar}
+\end{figure}
 
 
-mastic 1 vs mastic 2: the rock different
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Impact of binder}
 
-mastic 2 vs mastic 3: the binder different
+As mentioned previously, F2 is composed of lazard 2/6, lazard 6/10 and mastic F2, while F3 consists of the same aggregates combined with mastic F3.
+To better understand the relationship between the BRDF values of F2 and F3 and those of their individual components,a cross-sectional cut of the BRDF distribution at $\theta_r = 60^\circ$ for each sample was extracted, as illustrated in Figure~\ref{fig:brdf-distribution-polar}.
+For both F2 and F3, the BRDF values remain below those of their components except at the specular direction.
+This observation motivates an investigation into whether the BRDF of F2 or F3 can be represented as a linear or nonlinear combination of the BRDFs of their constituent components.
 
-
-Figure: in the same figures, plot 4 curves respectively for F1, F2, F3, F4
-For a given configuration ($\theta_i, \phi_i, \theta_r, \phi_r$): the BRDF along the wavelength ($350nm - 2500nm$)
-
-Analyze Figure:
-\begin{itemize}
-    \item comparison between F1 and F4: 1 rock different
-    \item comparison between F2 and F3: the binder different
-\end{itemize}
-
-
-Figure:
-BRDF distribution: 2 subfigures respectively for F1 and F4
-
-
-Figure:
-BRDF distribution: 2 subfigures respectively for F1 and F4
-
-
-Figure:
-For given ($\theta_i, \phi_i, \theta_r$): plot 4 curves in polar system
-Analyze Figure 4:
-\begin{itemize}
-    \item comparison between F1 and F4: 1 rock different
-    \item comparison between F2 and F3: the binder different
-\end{itemize}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Results of Single Road-Material Samples}
-
-%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Lazard}
-
-different size of lazard
-\begin{itemize}
-    \item Lazard 2/6
-    \item Lazard 6/10
-\end{itemize}
-
-Figure: in the same figures, plot 4 curves respectively for 2 different size rocks
-For a given configuration ($\theta_i, \phi_i, \theta_r, \phi_r$): the BRDF along the wavelength ($350nm - 2500nm$)
-
-Figure:
-BRDF distribution: 2 subfigures respectively for 2/6 and 6/10
-
-Figure:
-For given ($\theta_i, \phi_i, \theta_r$): plot 2 curves in polar system
-
-
-%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Garonne}
-different size of Garonne
-\begin{itemize}
-    \item Garonne 2/6
-    \item Garonne 6/10
-\end{itemize}
-
-Figure: in the same figures, plot 4 curves respectively for 2 different size rocks
-For a given configuration ($\theta_i, \phi_i, \theta_r, \phi_r$): the BRDF along the wavelength ($350nm - 2500nm$)
-
-Figure:
-BRDF distribution: 2 subfigures respectively for 2/6 and 6/10
-
-Figure:
-For given ($\theta_i, \phi_i, \theta_r$): plot 2 curves in polar system
-
-%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Gouraudière}
-
-Figure: in the same figures, plot 3 curves respectively for the same size rocks
-For a given configuration ($\theta_i, \phi_i, \theta_r, \phi_r$): the BRDF along the wavelength ($350nm - 2500nm$)
-
-Figure:
-BRDF distribution: for Gouraudière
-Comparing to Lazard and Garonne
-
-Figure:
-For given ($\theta_i, \phi_i, \theta_r$): plot 3 curves in polar system for the same size rocks
+In both the full mixtures and the corresponding mastics, the only differing component is the binder: F2 and mastic F2 contain a synthetic binder, whereas F3 and mastic F3 use bitumen.
+As seen in Figure~\ref{fig:brdf-comparison-binder}, both F2 and mastic F2 has lower BRDF values comparing to F3 and mastic F3, respectively.
+This consistent difference indicates that the binder has a significant contribution in governing the reflective behavior of multi-component road materials. 
+The lower BRDF values observed in bitumen-based mixtures suggest that bitumen reduced surface reflectivity, likely due to its dark color and so low reflectivity property.
 
 
 
+\begin{figure}[htbp]
+    \centering
+        \subfigure[F2 vs F3]{\includegraphics[width=0.48\linewidth]{./figures/spectral-brdf-measurements/results/fig_polar_F2_F3.png}\label{fig:polar-F2-F3}    }
+    \hfil
+    \subfigure[Mastic F2 vs Mastic F3]{\includegraphics[width=0.48\linewidth]{./figures/spectral-brdf-measurements/results/fig_polar_mastic_F2_F3.png}\label{fig:polar-mastic-F2-F3}    }
+    \caption{Measured spectral BRDF comparsion}
+    \label{fig:brdf-comparison-binder}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Impact of aggreates' size}
+% \textcolor{red}{compare the lazard 2/6 and lazard 6/10}
+
+From the BRDF distributions of the Lazard samples with two sizes at $600 nm$ shown in Figure~\ref{fig:lazard-2-6-brdf-dis} and Figure~\ref{fig:lazard-6-10-brdf-dis}, no significant differences are observed between them across observation configurations, except near the specular direction. 
+Similar behavior can be also observed in Figure~\ref{fig:brdf-distribution-polar}. 
+This suggests that aggregate size primarily affects the BRDF in the specular region. 
+The smaller aggregates exhibit slightly higher BRDF values than the larger ones, which may be attributed to the higher proportion of bright mineral particles exposed at the surface.
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+\label{sec: conclusion}
+
+
+Both validations using spectralon with albedo of $0.5$ and comparing measured data to the ones measured by UGE, prove that the proposed spectral BRDF measurement approached shows a good accuracy.
+For the study of spectral BRDF of roads surface, we conduct many measurements on the multi-material roads and their components.
+The data demonstrates that the binder has a significant contribution on the BRDF behavior of the mixture roads.
+Besides, the aggregates with different size has few difference except at the specular direction, which may have different contribution on the BRDF of mixture at the specular direction.
+
+
+
+In future work, the measured spectral BRDF data can be used to calibrate and evaluate existing reflectance models, such as the Cook Torrance model~\cite{1982_Cook}, the Oren Nayar model~\cite{1995_Oren}, and the Ashikhmin Shirley model~\cite{2000_Ashikhmin}. 
+Furthermore, it will be of interest to develop a hybrid model that combines the most appropriate BRDF models for each material component to represent the BRDF of composite road surfaces.
+This can provide a foundation for predicting the spectral BRDF of more complex pavement materials.

@@ -105,7 +105,34 @@ The computation is expressed as:
 %     \end{tabular}
 % \end{table}
 
-% \subsection{Photometry}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Photometry}
+To characterize light perception by human eyes, photometry is thus introduced.
+It relies on similar spectral radiometry quantities~\cite{2022_Hebert}, by weighting the spectral quantities by spectral luminous efficiency function $V(\lambda)$.
+The corresponding visual quantities referring to flux, irradiance and radiance are luminous flux, illuminance and luminance, respectively.
+
+\textbf{Luminous flux $F_v$}, is the measure of the perceived power of visible light. 
+It is expressed in lumens ($lm$). 
+
+
+\textbf{Illuminance $E_v$}, represents the luminous flux incident per unit area on a surface at a given point $O$~\cite{1993_Ian}.
+It is measured in $lux$ (lumens per square meter) and indicates how well an area is lit.
+
+\textbf{Luminance $L_v$}, represents the luminous flux incident per unit area per unit solid angle on a surface at a given point $O$~\cite{1993_Ian}. 
+It is measured in $cd/m^2$ (candelas per square meter) and relates directly to the perceived brightness of that surface.
+
+According to the conversion method provided by \href{https://doi.org/10.25039/CIE.DS.dktna2s3}{CIE}, the photometric quantities can be derived by integrating the flux, irradiance or radiance weighted by the function $V(\lambda)$ over the whole visible region from $360nm$ to $830nm$:
+
+\begin{equation}
+    \label{eq: transform_irrad_illum}
+    \begin{array}{lll}
+    F_{v} & = & \displaystyle{683\int_{360}^{830} F_\lambda \cdot V(\lambda) \mathrm{d}\lambda} \\ \\
+    E_{v} & = & \displaystyle{683\int_{360}^{830} E_\lambda \cdot V(\lambda) \mathrm{d}\lambda} \\ \\
+    L_{v} & = & \displaystyle{683 \int_{360}^{830}L_\lambda \cdot V(\lambda) \mathrm{d}\lambda}
+    \end{array}
+\end{equation}
+
+The corresponding dataset of $V(\lambda)$ from $360 nm$ to $830 nm$ is provided by \href{https://doi.org/10.25039/CIE.DS.dktna2s3}{CIE}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Spectral BRDF}
@@ -277,7 +304,7 @@ Similar to traditional BRDF, a physically plausible spectral BRDF also has the b
           \]
 \end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Isotropic and anisotropic}
 
 As spectral BRDF is an extension of traditional BRDF, it can be classified into two categories based on whether they exhibit rotational symmetry or not~\cite{2012_Montes, 2015_Filip}: isotropic and anisotropic.
@@ -288,6 +315,20 @@ Mathematically, it can be expressed in term of the azimuth angle difference betw
 \]
 
 In contrast, materials whose reflectance is not constant are considered anisotropic.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Photometric BRDF}
+
+Photometric BRDF has similar properties of spectral BRDF. 
+The difference is that it is the BRDF over the whole visible region~\cite{2022_Hebert}, which is the ratio of luminance $L_v$ and illuminance $E_v$:
+\begin{equation}
+\label{eq:brdf_definition_photometric}
+    f_v(\theta_i, \phi_i, \theta_r, \phi_r) = \frac{\mathrm{d}{L_v(\theta_r, \phi_r)}}{\mathrm{d}E_v(\theta_i, \phi_i)}%
+    % \left[\frac{W \cdot m^{-2} \cdot sr^{-1} \cdot nm^{-1}}%
+    % {W \cdot m^{-2}\cdot nm^{-1}}\right],
+\end{equation}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
