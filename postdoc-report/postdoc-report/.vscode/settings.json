@@ -6,12 +6,14 @@
         "autocorrelated",
         "backfacing",
         "backscatter",
+        "Batignolles",
         "BRDF",
         "Cerema",
         "Goniometric",
         "goniorectometer",
         "gonioreflectometer",
         "gonioreflectometers",
+        "goniospectroradiometer",
         "Greenstein",
         "Gustave",
         "halogene",
@@ -36,6 +38,7 @@
         "Simonot",
         "Spectralon",
         "spectroradiometers",
+        "Spie",
         "Spieringhs",
         "Université"
     ]
